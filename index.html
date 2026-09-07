@@ -1,578 +1,1041 @@
-<!DOCTYPE html>
-
-<html lang="es" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-container":"#ff8991","primary-fixed":"#ffdada","inverse-on-surface":"#ffede3","on-error":"#ffffff","primary-container":"#7b1b29","outline":"#897172","error-container":"#ffdad6","surface-container-lowest":"#ffffff","error":"#ba1a1a","on-primary":"#ffffff","on-secondary-container":"#724a00","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#005322","primary-fixed-dim":"#ffb3b5","primary":"#5c0115","background":"#fff8f5","tertiary-fixed-dim":"#3de273","outline-variant":"#ddc0c0","on-primary-fixed-variant":"#84222f","tertiary-container":"#004b1e","secondary":"#825500","on-secondary-fixed":"#291800","on-surface-variant":"#564242","on-tertiary-fixed":"#002109","surface-bright":"#fff8f5","secondary-fixed-dim":"#feb954","on-tertiary":"#ffffff","on-primary-fixed":"#40000c","secondary-fixed":"#ffddb4","inverse-surface":"#452a14","surface-container-low":"#fff1e9","tertiary-fixed":"#66ff8e","on-surface":"#2d1603","surface-tint":"#a33a45","surface-container-highest":"#ffdcc4","on-secondary-fixed-variant":"#633f00","secondary-container":"#feb954","on-background":"#2d1603","inverse-primary":"#ffb3b5","tertiary":"#003212","surface-dim":"#ffd1b1","on-tertiary-container":"#00c65b","surface":"#fff8f5","surface-variant":"#ffdcc4","surface-container-high":"#ffe3d1","surface-container":"#ffeadd","on-error-container":"#93000a"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","space-xl":"2rem","space-xs":"0.5rem","space-md":"1rem","max-width-content":"1200px","space-2xs":"0.25rem","space-sm":"0.75rem","margin-mobile":"1rem","gutter-sm":"1rem","gutter-lg":"2rem","margin-tablet":"2rem","gutter-md":"1.5rem","space-3xl":"4.5rem","space-2xl":"3rem","margin-desktop":"3rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"title-lg":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"display-lg":["Playfair Display"],"body-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Playfair Display"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"]},fontSize:{"body-md":["15px",{lineHeight:"24px",letterSpacing:"0.01em",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"0em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"700"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"600"}],"headline-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["13px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"400"}],"display-lg-mobile":["34px",{lineHeight:"42px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.05em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",letterSpacing:"0em",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1200px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs" data-path="inicio" href="#"><img alt="Santa Teresita Panadería" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfQKhetjqeK6Ev_wDWADL0m33rNsRniw2xfcxa0jIonNW68ap7ZTGWtWUTNVyidPURBng-Lrg4f5K_SOFrQLbKBgkfsQxdqoZrLwudwaLCpnseC07Dvpk-g1wDh6hpD3tO72IKH9UfSMAtcP0mU-rqZYs3hVLCExmNDILB8k2wU1K9Mo8ZLwKkG43wxGf6TUNCO-MgXJpyfqS1z7v1bWlDCB0JHzgDL6S4TrCNm7rw6x0f8SXNgkDO4xo5WqFvCx7wxfk"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none">Santa Teresita</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Panadería Artesanal</span></div></a></div><nav class="hidden md:flex items-center gap-space-xs lg:gap-space-md" data-active-classes="bg-primary-container text-on-primary rounded-full font-label-lg text-label-lg px-space-md py-space-xs shadow-sm"><a aria-current="page" class="transition-colors bg-primary-container text-on-primary rounded-full font-label-lg text-label-lg px-space-md py-space-xs shadow-sm" data-path="inicio" href="#">Inicio</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" data-path="productos" href="#catalogo">Productos</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" data-path="promociones" href="#catalogo" onclick="filtrarPorCategoria('combos')">Promociones</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" data-path="nosotros" href="#nosotros">Nosotros</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" data-path="contacto" href="#contacto">Sucursales</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary px-space-md py-space-xs rounded-full shadow-[0_4px_12px_rgba(123,27,41,0.2)] transition-all cursor-pointer" data-path="pedido" onclick="abrirCarrito()"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span class="font-label-lg text-label-lg">Ver mi pedido</span><span class="bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">(0)</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full selection:bg-secondary-fixed selection:text-on-secondary-fixed"><!-- HERO SENCILLO Y ELEGANTE -->
-<section class="w-full py-space-2xl md:py-space-3xl" id="inicio">
-<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-<div class="lg:col-span-7 flex flex-col items-start gap-space-sm">
-<div class="inline-flex items-center gap-space-2xs bg-secondary-container/20 text-on-secondary-container px-space-md py-1 rounded-full text-label-sm font-semibold">
-<span class="material-symbols-outlined text-[16px] text-secondary">local_fire_department</span>
-<span class="">Panadería artesanal desde 1979</span>
+<!DOCTYPE html><html class="dark" lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>BRAZAS | Parrilla Argentina - Pehuajó</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-container":"#d33a01","on-surface":"#e5e2e1","tertiary":"#f5bc7e","on-primary-fixed-variant":"#891d0e","on-error-container":"#ffdad6","on-tertiary":"#482900","surface-tint":"#ffb4a6","on-secondary-fixed-variant":"#872100","on-surface-variant":"#e0bfb9","secondary":"#ffb5a0","surface-container-high":"#2a2a2a","on-tertiary-container":"#e3ac70","surface":"#131313","primary-container":"#8b1e0f","on-secondary":"#5f1500","on-primary-container":"#ff9d8b","inverse-on-surface":"#313030","surface-container-highest":"#353534","background":"#131313","tertiary-fixed-dim":"#f5bc7e","tertiary-fixed":"#ffddbb","on-tertiary-fixed-variant":"#653e0b","on-primary":"#670600","surface-dim":"#131313","primary":"#ffb4a6","outline-variant":"#58413d","error":"#ffb4ab","surface-container-lowest":"#0e0e0e","on-secondary-container":"#fff7f5","inverse-surface":"#e5e2e1","inverse-primary":"#ab3523","on-background":"#e5e2e1","secondary-fixed":"#ffdbd1","primary-fixed-dim":"#ffb4a6","outline":"#a78a85","tertiary-container":"#663f0c","on-tertiary-fixed":"#2b1700","secondary-fixed-dim":"#ffb5a0","on-error":"#690005","surface-container":"#201f1f","primary-fixed":"#ffdad4","on-primary-fixed":"#400200","surface-variant":"#353534","on-secondary-fixed":"#3b0900","surface-bright":"#393939","error-container":"#93000a","surface-container-low":"#1c1b1b"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"1rem","space-2xl":"3rem","space-xs":"0.5rem","space-sm":"0.75rem","container-max":"1280px","space-3xl":"4rem","space-2xs":"0.25rem","space-xl":"2rem","space-4xl":"6rem","gutter-desktop":"2rem","space-lg":"1.5rem","gutter-mobile":"1rem"},"fontFamily":{"body-sm":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"label-lg":["Plus Jakarta Sans"],"display-hero-mobile":["Playfair Display"],"headline-xl":["Playfair Display"],"headline-lg":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Playfair Display"],"display-hero":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"label-sm":["Plus Jakarta Sans"]},"fontSize":{"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.015em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"0.01em","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.08em","fontWeight":"600"}],"display-hero-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"0em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.12em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-xl-mobile":["30px",{"lineHeight":"36px","letterSpacing":"0em","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.16em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)]"><div class="h-20 max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><a class="flex flex-col items-start focus:outline-none group" href="#hero"><div class="flex items-center gap-space-2xs"><span class="font-headline-md text-headline-md tracking-wider text-on-surface group-hover:text-primary transition-colors">BRAZAS</span><span class="material-symbols-outlined text-tertiary text-[18px]">local_fire_department</span></div><span class="font-label-sm text-label-sm uppercase tracking-[0.24em] text-tertiary/90">Parrilla Argentina</span></a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-tertiary font-bold"><a aria-current="page" class="uppercase tracking-wider transition-colors text-tertiary font-bold" data-path="inicio" href="#hero">Inicio</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="propuesta" href="#propuesta">Nuestra propuesta</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="menu" href="#menu">Menú</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="galeria" href="#galeria">Galería</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="reservas" href="#reservas">Reservas</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#contacto">Contacto</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_4px_16px_rgba(211,58,1,0.25)]" href="#reservas">Reservar mesa</a><button aria-label="Abrir menú" class="lg:hidden p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- ================================================================= -->
+<!-- 1. HERO SECTION                                                  -->
+<!-- ================================================================= -->
+<section class="relative w-full -mt-20 min-h-[92vh] flex items-center justify-center overflow-hidden" id="hero">
+<!-- Hero Background with deep ember scrim -->
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAMgnDrKaSC2kXOKMgqM6jmN76lj_suGrzN83Ygyms3ksysr4a_bE7VNeim4lN9usLPzVIhURijcf8L6WVKOpAk67yq95BPv3RK97jTLWcZ7i8lUu73788IX4pUQoekjmvRg1OfPjh53c8eMD7az9bCliOB_KCWBci1DPdP-Ned57F9sKvSGSXLGupPfAAk4S9no2XSwMULukDZ1ohieCJ9ldLHQLBQrBgayd73Eba9xNUmSIaSnCV_&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-surface-container-lowest/50 backdrop-blur-[1px]"></div>
+<!-- Ambient ember glow in center bottom -->
+<div class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-secondary-container/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="relative z-10 max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop pt-32 pb-space-3xl w-full flex flex-col items-center text-center">
+<!-- Top micro-tag -->
+<div class="inline-flex items-center gap-space-2xs px-space-md py-space-2xs rounded-full bg-surface-container-high/80 backdrop-blur-md mb-space-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary">Parrilla Argentina · Pehuajó</span>
 </div>
-<h1 class="font-headline-lg md:font-display-lg text-primary font-bold leading-tight">
-          Panadería Santa Teresita
-        </h1>
-<p class="font-body-lg text-on-surface-variant max-w-lg">
-          Todo lo rico de siempre, recién horneado. Elaboramos cada día con masa madre natural y recetas de familia para llevar calor a tu mesa.
-        </p>
-<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
-<button class="inline-flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary px-space-xl py-space-sm rounded-full shadow-sm hover:shadow transition-all font-label-lg text-label-lg" onclick="abrirCarrito()">
-<span class="material-symbols-outlined text-[18px]">restaurant_menu</span>
-<span class="">Hacer pedido</span>
-</button>
-<button class="inline-flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-xl py-space-sm rounded-full transition-all font-label-lg text-label-lg" onclick="abrirCarrito()">
-<span class="material-symbols-outlined text-[18px] text-primary">shopping_bag</span>
-<span class="">Ver carrito</span>
-</button>
-</div>
-<div class="flex items-center gap-space-lg pt-space-sm text-body-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-[18px]">schedule</span> Horneadas 07:00 y 16:30 hs</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span> 100% Sin conservantes</span>
-</div>
-</div>
-<div class="lg:col-span-5 relative">
-<div class="relative rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-surface-container-low">
-<img alt="Palmitas crocantes y recién horneadas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhqEwPxwK0CO7efMs1R7lyhyKxR6ACmRL4SKZHqg-SgRLv0ZLB_mgm8sPsHrppjYl6qm5cOprlPHJAOicijIkLDhQUBm0iWFC9j22QdzuElskilAQVr1nXxzG8Rrwy9wCN8qFBbSOBeO-41hixDWrU8PUO37jtjBng1XpD4cUEtRkudaQ6ph9PrrquG7tUCDX2vLBK9nH2R3ybcp8YbhSLLmmAmHonI5sDKsM_SAzF2UiIKGySiP1ARpPZ19bw_aDsNkA"/>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CARTA / CATÁLOGO UNIFICADO DIRECTO Y LIMPIO -->
-<section class="w-full py-space-2xl bg-surface-container-low/40" id="catalogo">
-<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
-<div>
-<span class="font-label-sm uppercase tracking-widest text-secondary font-bold">Nuestra Carta</span>
-<h2 class="font-headline-lg text-primary font-bold mt-1">Elegí tus favoritos</h2>
-</div>
-<p class="font-body-md text-on-surface-variant max-w-md">
-        Agregá lo que desees a tu pedido y coordinamos el retiro en cualquiera de nuestras 3 sucursales o envío directo por WhatsApp.
+<!-- Main Headline -->
+<h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-on-surface max-w-4xl tracking-tight mb-space-md">
+        El sabor del fuego.
+      </h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant/90 max-w-2xl mb-space-2xl font-light">
+        Una experiencia gastronómica para disfrutar alrededor de la mesa. Cortes nobles, brasas de quebracho y la mística de compartir el fogón.
       </p>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md w-full sm:w-auto mb-space-3xl">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-md rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_4px_24px_rgba(211,58,1,0.4)]" href="#reservas">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+<span class="">Reservar mesa</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-md rounded bg-surface-container-high/90 text-on-surface font-label-lg text-label-lg uppercase tracking-wider hover:bg-surface-container-highest hover:text-tertiary transition-all backdrop-blur-md shadow-md" href="#menu">
+<span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+<span class="">Ver carta</span>
+</a>
 </div>
-<!-- Filtros de categoría directos y limpios -->
-<div class="flex flex-col md:flex-row items-center justify-between gap-space-sm mb-space-lg">
-<div class="flex items-center gap-space-2xs overflow-x-auto w-full md:w-auto pb-1 scrollbar-none">
-<button class="cat-filter-btn active-cat whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md transition-all bg-primary text-on-primary shadow-sm" id="btn-cat-todos" onclick="filtrarPorCategoria('todos')">Todos</button>
-<button class="cat-filter-btn whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md transition-all bg-surface-container text-on-surface-variant hover:text-on-surface" id="btn-cat-panaderia" onclick="filtrarPorCategoria('panaderia')">Panadería</button>
-<button class="cat-filter-btn whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md transition-all bg-surface-container text-on-surface-variant hover:text-on-surface" id="btn-cat-facturas" onclick="filtrarPorCategoria('facturas')">Facturas</button>
-<button class="cat-filter-btn whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md transition-all bg-surface-container text-on-surface-variant hover:text-on-surface" id="btn-cat-sandwiches" onclick="filtrarPorCategoria('sandwiches')">Sandwiches</button>
-<button class="cat-filter-btn whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md transition-all bg-surface-container text-on-surface-variant hover:text-on-surface" id="btn-cat-pasteleria" onclick="filtrarPorCategoria('pasteleria')">Pastelería</button>
-<button class="cat-filter-btn whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md transition-all bg-surface-container text-on-surface-variant hover:text-on-surface" id="btn-cat-combos" onclick="filtrarPorCategoria('combos')">Promos</button>
+<!-- Micro-Badges Row -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md max-w-3xl w-full">
+<div class="flex items-center justify-center gap-space-xs p-space-sm rounded-lg bg-surface-container/60 backdrop-blur-md">
+<span class="material-symbols-outlined text-tertiary text-[22px]">whatshot</span>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Cocina a las brasas</span>
 </div>
-<div class="relative w-full md:w-72">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
-<input class="w-full bg-surface-container-lowest text-on-surface pl-10 pr-space-md py-2 rounded-full text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary/40 shadow-xs placeholder:text-on-surface-variant/60" id="buscador-productos" oninput="buscarProductos(this.value)" placeholder="Buscar producto..." type="text"/>
+<div class="flex items-center justify-center gap-space-xs p-space-sm rounded-lg bg-surface-container/60 backdrop-blur-md">
+<span class="material-symbols-outlined text-tertiary text-[22px]">kebab_dining</span>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Cortes seleccionados</span>
 </div>
+<div class="flex items-center justify-center gap-space-xs p-space-sm rounded-lg bg-surface-container/60 backdrop-blur-md">
+<span class="material-symbols-outlined text-tertiary text-[22px]">wine_bar</span>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Para compartir</span>
 </div>
-<!-- Grilla de productos limpia -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md" id="grilla-catalogo"></div>
-<!-- Empty state -->
-<div class="hidden flex flex-col items-center justify-center py-space-2xl text-center" id="sin-resultados">
-<span class="material-symbols-outlined text-secondary text-[40px] mb-2">search_off</span>
-<h3 class="font-headline-sm text-primary font-bold">No encontramos coincidencias</h3>
-<p class="font-body-sm text-on-surface-variant mt-1 mb-space-sm">Probá con otra palabra o mirá todas las categorías.</p>
-<button class="bg-primary text-on-primary px-space-md py-1.5 rounded-full font-label-md shadow-sm" onclick="filtrarPorCategoria('todos')">Ver catálogo completo</button>
 </div>
 </div>
 </section>
-<!-- SOBRE NOSOTROS Y LOCAL COMPACTO -->
-<section class="w-full py-space-2xl bg-surface" id="nosotros">
-<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
-<div class="lg:col-span-5 flex flex-col gap-space-sm">
-<span class="font-label-sm uppercase tracking-widest text-secondary font-bold">Tradición Familiar</span>
-<h2 class="font-headline-lg text-primary font-bold leading-tight">Más de 70 años horneando historias</h2>
-<p class="font-body-md text-on-surface-variant">
-          Iniciamos el obrador en la madrugada con harinas seleccionadas y fermentaciones naturales. Sin atajos industriales: el sabor auténtico del pan casero y las facturas crocantes que acompañan a cada familia en cualquiera de nuestras 3 sucursales.
+<!-- ================================================================= -->
+<!-- 2. NUESTRA PROPUESTA                                             -->
+<!-- ================================================================= -->
+<section class="w-full py-space-4xl bg-surface-container-lowest relative overflow-hidden" id="propuesta">
+<!-- Decorative background glow -->
+<div class="absolute -top-40 -right-40 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+<!-- Left: Editorial Content -->
+<div class="lg:col-span-6 flex flex-col items-start">
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-surface-container mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary">Tradición y Pasión Argentina</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-space-lg leading-tight">
+            Donde el fuego es protagonista.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-md leading-relaxed">
+            En Brazas creemos que una buena comida empieza con un buen fuego. Seleccionamos cuidadosamente nuestros ingredientes y los llevamos a las brasas de quebracho y espinillo para crear platos llenos de sabor, pensados para compartir y disfrutar sin apuro.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant/80 mb-space-xl">
+            Un punto de encuentro en Pehuajó para los amantes del asado bien hecho, donde el corte madurado, la leña noble y la buena compañía componen el ritual de cada noche.
+          </p>
+<!-- Feature items grid -->
+<div class="grid grid-cols-2 gap-space-md w-full pt-space-md mb-space-xl">
+<div class="flex flex-col gap-space-2xs p-space-md rounded bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[28px]">local_fire_department</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Leña de Quebracho</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Calor parejo y aroma inconfundible de campo.</span>
+</div>
+<div class="flex flex-col gap-space-2xs p-space-md rounded bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-[28px]">timer</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Cocción sin apuro</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tiempos pacientes para cortes tiernos y jugosos.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<a class="inline-flex items-center gap-space-xs text-primary hover:text-on-primary-container transition-colors font-label-lg text-label-lg tracking-wider group" href="#reservas">
+<span class="">Viví la experiencia del asador</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right: Asymmetric Image Composition -->
+<div class="lg:col-span-6 relative">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl bg-surface-container">
+<img alt="Ojo de bife servido sobre tabla con brasas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ouuYDJDHG97H5_Y9ZTDDJLx3zpWqGKGBRTvNMGngvetSvC8DUcCIGFKekpR4UGss0OXWsn1_GeeIDG_A6fDwJK-d4fiIzbV-CCLN4XUpJjRLtt088Z6G62Dd-VLYrsS_s82iEl16hUdL_iu1OxRqkP3xsvk9BR_mTQSvMy-MuUHvAdOnXlhuh1f1hQaiH2MCPMcU3vAuEXyE8s8rjH4dFWQdvZn41FabdcmYEjoFczjgYQ8Lmmjz">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-space-lg left-space-lg right-space-lg flex items-end justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">Corte Emblemático</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Ojo de Bife con Sal Marina &amp; Romero</p>
+</div>
+<span class="px-space-sm py-space-2xs rounded bg-surface-container-highest/90 backdrop-blur font-label-md text-label-md text-tertiary">A Punto</span>
+</div>
+</div>
+<!-- Overlapping floating badge -->
+<div class="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-space-md p-space-md rounded-lg bg-surface-container-high/95 backdrop-blur-md shadow-xl max-w-xs">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[24px]">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Origen Pampas</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Selección de novillos de pastura natural.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================================================================= -->
+<!-- 3. MENÚ: NUESTRA CARTA                                            -->
+<!-- ================================================================= -->
+<section class="w-full py-space-4xl bg-surface relative" id="menu">
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl">
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-surface-container-high mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary">Nuestra Carta</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-space-xs">
+          Sabores de la Parrilla
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80">
+          Contenido de muestra editable — Posteriormente se reemplazará por la carta oficial de Brazas.
         </p>
-<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
-<div class="bg-surface-container-low p-space-sm rounded-xl">
-<span class="font-headline-sm text-primary font-bold block">1979</span>
-<span class="font-body-sm text-on-surface-variant">Año de fundación</span>
 </div>
-<div class="bg-surface-container-low p-space-sm rounded-xl">
-<span class="font-headline-sm text-primary font-bold block">3 Locales</span>
-<span class="font-body-sm text-on-surface-variant">Para retirar tu pedido</span>
+<!-- Categories Filter Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-md mb-space-2xl scrollbar-none no-scrollbar justify-start md:justify-center">
+<button class="menu-tab active px-space-md py-space-xs rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-space-2xs bg-primary-container text-on-primary-container shadow-sm" data-cat="carnes" type="button">
+<span class="material-symbols-outlined text-[16px]">kebab_dining</span>
+<span class="">Carnes a las brasas</span>
+</button>
+<button class="menu-tab px-space-md py-space-xs rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-space-2xs bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-cat="entradas" type="button">
+<span class="material-symbols-outlined text-[16px]">tapas</span>
+<span class="">Entradas</span>
+</button>
+<button class="menu-tab px-space-md py-space-xs rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-space-2xs bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-cat="guarniciones" type="button">
+<span class="material-symbols-outlined text-[16px]">nutrition</span>
+<span class="">Guarniciones</span>
+</button>
+<button class="menu-tab px-space-md py-space-xs rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-space-2xs bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-cat="pollo" type="button">
+<span class="material-symbols-outlined text-[16px]">dinner_dining</span>
+<span class="">Pollo</span>
+</button>
+<button class="menu-tab px-space-md py-space-xs rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-space-2xs bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-cat="pastas" type="button">
+<span class="material-symbols-outlined text-[16px]">ramen_dining</span>
+<span class="">Pastas</span>
+</button>
+<button class="menu-tab px-space-md py-space-xs rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-space-2xs bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-cat="postres" type="button">
+<span class="material-symbols-outlined text-[16px]">cake</span>
+<span class="">Postres</span>
+</button>
+<button class="menu-tab px-space-md py-space-xs rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-space-2xs bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-cat="bebidas" type="button">
+<span class="material-symbols-outlined text-[16px]">wine_bar</span>
+<span class="">Vinos &amp; Bebidas</span>
+</button>
 </div>
+<!-- Menu Items Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg" id="menu-grid">
+<!-- Item 1 -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="carnes">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img alt="Ojo de bife asado jugoso" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ouuYDJDHG97H5_Y9ZTDDJLx3zpWqGKGBRTvNMGngvetSvC8DUcCIGFKekpR4UGss0OXWsn1_GeeIDG_A6fDwJK-d4fiIzbV-CCLN4XUpJjRLtt088Z6G62Dd-VLYrsS_s82iEl16hUdL_iu1OxRqkP3xsvk9BR_mTQSvMy-MuUHvAdOnXlhuh1f1hQaiH2MCPMcU3vAuEXyE8s8rjH4dFWQdvZn41FabdcmYEjoFczjgYQ8Lmmjz">
+<span class="absolute top-space-xs right-space-xs px-space-xs py-space-2xs rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-tertiary">Favorito</span>
 </div>
-</div>
-<div class="lg:col-span-7 flex flex-col gap-space-sm" id="contacto">
-<div class="flex items-center justify-between">
+<div class="p-space-lg flex flex-col flex-grow justify-between">
 <div>
-<span class="font-label-sm uppercase tracking-widest text-secondary font-bold">Puntos de Retiro</span>
-<h3 class="font-title-lg text-primary font-bold">Nuestras 3 Sucursales</h3>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ojo de Bife</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$18.500</span>
 </div>
-<a class="text-tertiary-container hover:text-tertiary font-label-sm font-bold flex items-center gap-1" href="https://wa.me/5492284606363" rel="noopener" target="_blank">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-<span>+54 9 2284 60-6363</span>
-</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                450g de corte seleccionado con cocción precisa a las brasas, sal marina y ramita de romero fresco.
+              </p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
-<div class="bg-surface-container-low/80 p-space-md rounded-2xl flex flex-col justify-between border border-outline-variant/30">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[22px]">store</span>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_fire_department</span>
+<span class="">Recomendado Jugoso o A Punto</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="carnes">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Slow roasted beef flank steak vacio over glowing red charcoal embers in a dark Argentine steakhouse kitchen with rising smoke and wood sparks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5-64MmPSA2qxH6GF-wcKXFX-wfo5Zdu9CxlbcGnxmFpPwXKy9pticQ6RLz1yybTrK0rgx90rIDUm18jP0nxD4a1xxdvXBNdXEHX8ot3nQoD33-pVBnAv-kBXBocakFrwGMzRvqLKKN0NkzI533-buIVQ3iNVwZA2z42kzV9JIBzk6DktgDlXSfR2OLs3Lr-7okXWcJcF_1YLqc2-cYpNvet8KlOkzjj9M8LniuYqbR9Iufvp9B95C">
+<span class="absolute top-space-xs right-space-xs px-space-xs py-space-2xs rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-tertiary">4h Cocción</span>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
 <div>
-<h4 class="font-title-sm text-on-surface font-bold">Sucursal Centro</h4>
-<p class="font-body-sm text-on-surface-variant mt-1">Av. San Martín 1420</p>
-<p class="font-label-sm text-secondary font-semibold mt-1">Lun a Sáb 06:30 - 20:30 hs</p>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Vacío Braseado</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$16.800</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Cocción lenta y paciente de 4 horas a fuego bajo con leña seleccionada, extremadamente tierno y jugoso.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+<span class="">Cocción paciente</span>
 </div>
 </div>
-<a class="mt-space-sm inline-flex items-center gap-1 font-label-sm text-primary hover:text-primary-container font-bold" href="https://maps.google.com/?q=Av.+San+Martin+1420" rel="noopener" target="_blank">
-<span>Ver mapa</span>
-<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</a>
 </div>
-<div class="bg-surface-container-low/80 p-space-md rounded-2xl flex flex-col justify-between border border-outline-variant/30">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[22px]">storefront</span>
+<!-- Item 3 -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="carnes">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img alt="Parrilla completa con cortes de carne y brasas ardientes" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMgnDrKaSC2kXOKMgqM6jmN76lj_suGrzN83Ygyms3ksysr4a_bE7VNeim4lN9usLPzVIhURijcf8L6WVKOpAk67yq95BPv3RK97jTLWcZ7i8lUu73788IX4pUQoekjmvRg1OfPjh53c8eMD7az9bCliOB_KCWBci1DPdP-Ned57F9sKvSGSXLGupPfAAk4S9no2XSwMULukDZ1ohieCJ9ldLHQLBQrBgayd73Eba9xNUmSIaSnCV_">
+<span class="absolute top-space-xs right-space-xs px-space-xs py-space-2xs rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm">2-3 Personas</span>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
 <div>
-<h4 class="font-title-sm text-on-surface font-bold">Sucursal Norte</h4>
-<p class="font-body-sm text-on-surface-variant mt-1">Av. Colón 2850</p>
-<p class="font-label-sm text-secondary font-semibold mt-1">Lun a Sáb 07:00 - 20:00 hs</p>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Parrillada Brazas</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$36.000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Asado de tira, bife de chorizo, chorizo bombón, morcilla criolla y mollejas crocantes al limón.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">group</span>
+<span class="">Para compartir</span>
 </div>
 </div>
-<a class="mt-space-sm inline-flex items-center gap-1 font-label-sm text-primary hover:text-primary-container font-bold" href="https://maps.google.com/?q=Av.+Colon+2850" rel="noopener" target="_blank">
-<span>Ver mapa</span>
-<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</a>
 </div>
-<div class="bg-surface-container-low/80 p-space-md rounded-2xl flex flex-col justify-between border border-outline-variant/30">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[22px]">bakery_dining</span>
+<!-- Item 4 -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="carnes">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Plated thick Argentine bife de chorizo sirloin strip with charred grill marks served on a rustic dark slate board alongside chimichurri sauce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBzawlDH6uIJwOIPoA9QHLref2Dss8bsg6RTzZx0x1pmRliLpDM_xaobGiUAtV3NB3_e29RnFomKQKcT15nSC3iPleSf0Dl9GaMIjpUcE0cinfhoMxoZrUtTn-rfaU4ku84oL4DTJTbO4KiWWDkQGzOCU6u4QtTMZaGCrUP5OIKA4ctf6Z907Dx_qXXiGQQqKpYd_tIJEEyNzmnGGhG2gvHViOcQ7AYCsO7ARWKhRwSM_U6TZnKrPA">
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
 <div>
-<h4 class="font-title-sm text-on-surface font-bold">Sucursal Pueblo Nuevo</h4>
-<p class="font-body-sm text-on-surface-variant mt-1">Rivadavia 1940</p>
-<p class="font-label-sm text-secondary font-semibold mt-1">Lun a Sáb 07:00 - 20:30 hs</p>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Bife de Chorizo</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$17.900</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                400g de corte premium madurado en seco, acompañado de chimichurri de la casa y salsa criolla fresca.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="">Corte Clásico</span>
 </div>
 </div>
-<a class="mt-space-sm inline-flex items-center gap-1 font-label-sm text-primary hover:text-primary-container font-bold" href="https://maps.google.com/?q=Rivadavia+1940" rel="noopener" target="_blank">
-<span>Ver mapa</span>
-<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</a>
+</div>
+<!-- Item 5: Entrada Provoleta -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="entradas">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Bubbling hot grilled Argentine provoleta cheese in a cast iron skillet with oregano flakes dried chili and sundried tomatoes, shot in warm moody light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs74UDZzAIOwK4q2hxjkDRZYVQT2pWNLgfCttpD0X3brMNJpAOjcFjWxai12xVL04esCi8aGEFf96q2uBEhtgpNSKPkiEfYKXiPc_i1xxMLw3yJbkR1kfXtGBOGFkgD7h6BMwrq9JiUp7H7KRuerTrVbtC6ksoL2SMri4curRFrMvU7DtpqI8mYL__FZJALVDWLD99AfMZkI3XcKTC0qRPXWL3IAqDyo-H_c8Zg9HjO89OEkg56m9M">
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Provoleta Parrillera</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$9.200</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Provoleta crocante por fuera y fundida por dentro con orégano fresco, ají molido y reducción de aceto.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">lunch_dining</span>
+<span class="">Entrada Clásica</span>
+</div>
+</div>
+</div>
+<!-- Item 6: Empanadas -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="entradas">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional Argentine beef hand-cut empanadas with golden crispy crust arranged on a dark ceramic platter with fresh green onion and lime wedges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE6pdypmQzvOLDKFbySpui6FroCHFuQBRPYw779nYwpEyJ5aOSyjn6GnghtfwKdlsqxi_iaZSOGJ1Bgo4k33-LpDBNUQi6Wmt-qnD7j2MrTV6EuAFwqcy1ipkdwEMlCMI6aXe3lK-d66JjnyyKwOywqgEUOYOyHeuBCjvk6x64T3L73y7trESZVTM9fs49nZwLPXlLGc_2SCS6_7pOHovRYkUHw-KXOsT6GdSrzrBybdqw8sNpeYzv">
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Empanadas a Cuchillo</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$4.800</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Dos unidades de lomo cortado a cuchillo, cebolla de verdeo, pimentón dulce y masa artesanal al horno de barro.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">bakery_dining</span>
+<span class="">2 unidades</span>
+</div>
+</div>
+</div>
+<!-- Item 7: Mollejas -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="entradas">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Crispy grilled veal sweetbreads mollejas glistening with lemon juice and sea salt on a cast iron platter with embers glowing in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEZJlF0JsDLhXdPzmWxa-aKbU_G_hBeIJr1EWdNiGYIJGS6xR2oJuCo-iBkLptdUdhnWovGTRRsa8S0gvgElqfb2ixd35hkqNxxsqk9gwD9FjRup6Q-mzttDlAk73zSTaZ-WtX3owOhkHop3QDHqKPvbZDaNM7HUQ9Ypk98gp4ufXvgB8_hYk8p5urzyHWyPlIHo9CJ44o2ak0hSSUJd8GldZDNuEJp0EyFlaX2-Um6OZ0v4iGPlwH">
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mollejas al Verdeo</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$13.500</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Grilladas a fuego vivo, crocantes y doradas, con emulsión de limón y reducción de cebollas de verdeo.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">stars</span>
+<span class="">Especialidad del Fogón</span>
+</div>
+</div>
+</div>
+<!-- Item 8: Flan Casero -->
+<div class="menu-item flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300" data-item-cat="postres">
+<div class="h-48 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Argentine traditional flan dessert served with generous spoonfuls of dark dulce de leche and whipped fresh cream on an artisan ceramic dark plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTwVnsYVzLZcYY4Wu-1U4yW9GIDGiN7fOjyOU3KyXyih9SHyzoNEwDoE73PU2JHHWpSUei3pHq0p4kpvzLzn8zDYZK2mYEAyMF0_HHaUocD8k10qbO6NgIKXPMyRjkrLmdX_NwT0Eg3FmnvX9k60zJFhrZAYRWe1_2urnH5LpPLqLU9yfuQanYueQERl_P72mlfxwdPzXQlQ_nIqfHMJgwv6SeqXxnEfVxzn4Nuc2S7fTIf_P9a_V5">
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-baseline justify-between gap-space-xs mb-space-2xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Flan Mixto</h3>
+<span class="font-label-lg text-label-lg text-tertiary shrink-0">$5.400</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Receta tradicional de huevos de campo, caramelo artesanal y doble porción de dulce de leche colonial con crema.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant/70 font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">icecream</span>
+<span class="">Final Dulce</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footnote -->
+<div class="mt-space-2xl pt-space-lg text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 italic">
+          * Precios y platos sujetos a disponibilidad estacional. No dudes en consultar nuestras sugerencias del día al camarero.
+        </p>
+</div>
+</div>
+</section>
+<!-- ================================================================= -->
+<!-- 4. SECCIÓN EXPERIENCIA                                            -->
+<!-- ================================================================= -->
+<section class="w-full py-space-4xl bg-surface-container-lowest relative">
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="text-center max-w-2xl mx-auto mb-space-3xl">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary block mb-space-2xs">Filosofía Brazas</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Una mesa. Buen fuego. Buenos momentos.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-xl">
+<!-- Pillar 1 -->
+<div class="p-space-xl rounded-xl bg-surface-container-low relative group hover:bg-surface-container transition-colors shadow-lg">
+<div class="w-14 h-14 rounded-lg bg-primary-container/30 flex items-center justify-center mb-space-lg">
+<span class="material-symbols-outlined text-secondary text-[32px]">local_fire_department</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">El fuego</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            El protagonista indiscutido de nuestra cocina. Leña de quebracho seleccionada y calor exacto para despertar los mejores sabores de cada pieza sin apuros.
+          </p>
+<div class="mt-space-lg flex items-center gap-space-2xs text-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="">Brasas vivas</span>
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="p-space-xl rounded-xl bg-surface-container-low relative group hover:bg-surface-container transition-colors shadow-lg">
+<div class="w-14 h-14 rounded-lg bg-primary-container/30 flex items-center justify-center mb-space-lg">
+<span class="material-symbols-outlined text-secondary text-[32px]">kebab_dining</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">La parrilla</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Cortes argentinos madurados y preparados con la técnica y el tiempo que cada pieza exige. Respeto absoluto por la carne y su punto justo.
+          </p>
+<div class="mt-space-lg flex items-center gap-space-2xs text-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="">Materia prima noble</span>
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="p-space-xl rounded-xl bg-surface-container-low relative group hover:bg-surface-container transition-colors shadow-lg">
+<div class="w-14 h-14 rounded-lg bg-primary-container/30 flex items-center justify-center mb-space-lg">
+<span class="material-symbols-outlined text-secondary text-[32px]">wine_bar</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">El momento</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Un espacio cálido y distendido en Pehuajó, pensado para reunirse con amigos o familia, celebrar acontecimientos y disfrutar sin mirar el reloj.
+          </p>
+<div class="mt-space-lg flex items-center gap-space-2xs text-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="">Encuentro &amp; Charla</span>
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================================================================= -->
+<!-- 5. SECCIÓN RESERVAS (INTERACTIVA & WHATSAPP)                      -->
+<!-- ================================================================= -->
+<section class="w-full py-space-4xl bg-surface relative scroll-mt-20" id="reservas">
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="text-center max-w-2xl mx-auto mb-space-3xl">
+<div class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded bg-primary-container/40 mb-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[18px]">event_available</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary">Gestión directa</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-space-xs">Reservá tu mesa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Elegí el día, la hora y la cantidad de personas. Te esperamos con el fuego encendido.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+<!-- Reservation Form Controls -->
+<div class="lg:col-span-7 bg-surface-container-low p-space-xl sm:p-space-2xl rounded-2xl shadow-xl flex flex-col gap-space-lg">
+<!-- Step 1: Fecha -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary flex items-center gap-space-2xs" for="res-fecha">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="">1. Elegí la fecha</span>
+</label>
+<input class="w-full px-space-md py-space-sm rounded bg-surface text-on-surface font-body-md focus:outline-none focus:ring-1 focus:ring-secondary-container shadow-inner" id="res-fecha" type="date" min="2026-09-07">
+</div>
+<!-- Step 2: Horario Pills -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="">2. Seleccioná el horario</span>
+</label>
+<div class="grid grid-cols-3 sm:grid-cols-6 gap-space-xs" id="horario-container">
+<button class="time-pill py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all shadow-sm" data-time="20:00" type="button">20:00</button>
+<button class="time-pill py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all shadow-sm" data-time="20:30" type="button">20:30</button>
+<button class="time-pill active py-space-xs rounded bg-primary-container text-on-primary-container font-label-md text-label-md text-center transition-all shadow-sm" data-time="21:00" type="button">21:00</button>
+<button class="time-pill py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all shadow-sm" data-time="21:30" type="button">21:30</button>
+<button class="time-pill py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all shadow-sm" data-time="22:00" type="button">22:00</button>
+<button class="time-pill py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md text-center transition-all shadow-sm" data-time="22:30" type="button">22:30</button>
+</div>
+</div>
+<!-- Step 3: Personas Pills -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span class="">3. Cantidad de comensales</span>
+</label>
+<div class="flex flex-wrap gap-space-xs" id="personas-container">
+<button class="pax-pill px-space-md py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" data-pax="1 persona" type="button">1 persona</button>
+<button class="pax-pill active px-space-md py-space-xs rounded bg-primary-container text-on-primary-container font-label-md text-label-md transition-all shadow-sm" data-pax="2 personas" type="button">2 personas</button>
+<button class="pax-pill px-space-md py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" data-pax="3 personas" type="button">3 personas</button>
+<button class="pax-pill px-space-md py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" data-pax="4 personas" type="button">4 personas</button>
+<button class="pax-pill px-space-md py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" data-pax="5 personas" type="button">5 personas</button>
+<button class="pax-pill px-space-md py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" data-pax="6 personas" type="button">6 personas</button>
+<button class="pax-pill px-space-md py-space-xs rounded bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" data-pax="7+ personas" type="button">7+ personas</button>
+</div>
+</div>
+<!-- Step 4: Datos de Contacto -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary" for="res-nombre">Nombre y apellido *</label>
+<input class="w-full px-space-md py-space-sm rounded bg-surface text-on-surface font-body-md focus:outline-none focus:ring-1 focus:ring-secondary-container shadow-inner" id="res-nombre" placeholder="Ej: Lucas González" type="text">
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary" for="res-telefono">Número de WhatsApp *</label>
+<input class="w-full px-space-md py-space-sm rounded bg-surface text-on-surface font-body-md focus:outline-none focus:ring-1 focus:ring-secondary-container shadow-inner" id="res-telefono" placeholder="Ej: 2284606363" type="tel">
+</div>
+</div>
+<!-- Step 5: Observaciones -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary" for="res-obs">¿Alguna ocasión especial o pedido? (Opcional)</label>
+<textarea class="w-full px-space-md py-space-sm rounded bg-surface text-on-surface font-body-md focus:outline-none focus:ring-1 focus:ring-secondary-container resize-none shadow-inner" id="res-obs" placeholder="Cumpleaños, aniversario, mesa cerca de la ventana, silla para bebé..." rows="2"></textarea>
+</div>
+</div>
+<!-- Reservation Live Summary & Send -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="bg-surface-container-high p-space-xl rounded-2xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-container-highest/40 -mx-space-xl -mt-space-xl p-space-xl rounded-t-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[22px]">assignment</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Resumen de tu reserva</h3>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary px-space-xs py-space-2xs rounded bg-surface-container">Paso Final</span>
+</div>
+<!-- Dynamic Summary List -->
+<div class="flex flex-col gap-space-md font-body-md text-body-md mb-space-xl">
+<div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0">calendar_month</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Fecha</span>
+<span class="font-medium text-on-surface" id="summary-fecha">2026-09-08</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0">schedule</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Horario</span>
+<span class="font-medium text-on-surface" id="summary-horario">21:00 hs</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0">groups</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Comensales</span>
+<span class="font-medium text-on-surface" id="summary-pax">2 personas</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0">person</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">A nombre de</span>
+<span class="font-medium text-on-surface-variant/70 italic" id="summary-nombre">Completar nombre</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0">phone</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Teléfono de contacto</span>
+<span class="font-medium text-on-surface-variant/70 italic" id="summary-tel">Completar teléfono</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">chat_bubble</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Observaciones</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70 italic" id="summary-obs">Ninguna</span>
+</div>
+</div>
+</div>
+</div>
+<!-- WhatsApp Trigger Button -->
+<div class="flex flex-col gap-space-sm">
+<button class="w-full flex items-center justify-center gap-space-sm px-space-xl py-space-md rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg tracking-wider uppercase hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_4px_24px_rgba(211,58,1,0.4)]" id="btn-whatsapp-reserva" type="button">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+<span class="">Confirmar reserva por WhatsApp</span>
+</button>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 text-center leading-tight">
+                Se abrirá tu WhatsApp para enviar el mensaje con la solicitud de tu mesa al restaurante.
+              </p>
+</div>
+</div>
+<!-- Availability Disclaimer Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Importante:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+                La reserva queda solicitada y sujeta a confirmación según disponibilidad del restaurante. Recibirás la respuesta directa del equipo de Brazas por WhatsApp.
+              </p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- DRAWER / MODAL LATERAL DE PEDIDO (SLIDE-OVER) -->
-<div class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0" id="drawer-pedido">
-<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" id="drawer-backdrop" onclick="cerrarCarrito()"></div>
-<div class="absolute inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10 transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto" id="drawer-panel">
-<div class="w-screen max-w-md bg-surface-container-lowest shadow-2xl flex flex-col justify-between h-full">
-<div class="p-space-md bg-surface-container-low flex items-center justify-between border-b border-outline-variant/30">
-<div class="flex items-center gap-space-2xs">
-<span class="material-symbols-outlined text-primary text-[22px]">shopping_bag</span>
-<h3 class="font-title-lg text-primary font-bold">Mi Pedido</h3>
-<span class="bg-secondary-container text-on-secondary-fixed text-label-sm px-2 py-0.5 rounded-full font-bold" id="drawer-contador-badge">0 ítems</span>
+<!-- ================================================================= -->
+<!-- 6. GALERÍA INTERACTIVA (CON LIGHTBOX)                            -->
+<!-- ================================================================= -->
+<section class="w-full py-space-4xl bg-surface-container-lowest relative" id="galeria">
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary block mb-space-2xs">Imágenes del Asador</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Nuestros momentos y brasas</h2>
 </div>
-<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" onclick="cerrarCarrito()" title="Cerrar">
-<span class="material-symbols-outlined text-[18px]">close</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 max-w-md">
+          Hacé clic en cualquier fotografía para apreciar el detalle de nuestros cortes y el ambiente de nuestro salón.
+        </p>
+</div>
+<!-- Mosaico Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Photo 1: Big Parrilla -->
+<div class="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer bg-surface-container shadow-lg gallery-item" data-caption="Parrilla tradicional argentina encendida con leña de quebracho y cortes seleccionados" data-full="https://lh3.googleusercontent.com/aida-public/AB6AXuAMgnDrKaSC2kXOKMgqM6jmN76lj_suGrzN83Ygyms3ksysr4a_bE7VNeim4lN9usLPzVIhURijcf8L6WVKOpAk67yq95BPv3RK97jTLWcZ7i8lUu73788IX4pUQoekjmvRg1OfPjh53c8eMD7az9bCliOB_KCWBci1DPdP-Ned57F9sKvSGSXLGupPfAAk4S9no2XSwMULukDZ1ohieCJ9ldLHQLBQrBgayd73Eba9xNUmSIaSnCV_">
+<img alt="Parrilla con brasas incandescentes y carne asándose" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMgnDrKaSC2kXOKMgqM6jmN76lj_suGrzN83Ygyms3ksysr4a_bE7VNeim4lN9usLPzVIhURijcf8L6WVKOpAk67yq95BPv3RK97jTLWcZ7i8lUu73788IX4pUQoekjmvRg1OfPjh53c8eMD7az9bCliOB_KCWBci1DPdP-Ned57F9sKvSGSXLGupPfAAk4S9no2XSwMULukDZ1ohieCJ9ldLHQLBQrBgayd73Eba9xNUmSIaSnCV_">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">El Fogón Vivo</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Brasas de Quebracho</p>
+</div>
+</div>
+<div class="absolute top-space-sm right-space-sm w-9 h-9 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface text-[18px]">zoom_in</span>
+</div>
+</div>
+<!-- Photo 2: Ojo de Bife -->
+<div class="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer bg-surface-container shadow-lg gallery-item" data-caption="Ojo de bife servido a punto sobre tabla de madera rústica con sal gruesa y romero" data-full="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ouuYDJDHG97H5_Y9ZTDDJLx3zpWqGKGBRTvNMGngvetSvC8DUcCIGFKekpR4UGss0OXWsn1_GeeIDG_A6fDwJK-d4fiIzbV-CCLN4XUpJjRLtt088Z6G62Dd-VLYrsS_s82iEl16hUdL_iu1OxRqkP3xsvk9BR_mTQSvMy-MuUHvAdOnXlhuh1f1hQaiH2MCPMcU3vAuEXyE8s8rjH4dFWQdvZn41FabdcmYEjoFczjgYQ8Lmmjz">
+<img alt="Corte de carne servido en tabla de madera con sal entrefina" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ouuYDJDHG97H5_Y9ZTDDJLx3zpWqGKGBRTvNMGngvetSvC8DUcCIGFKekpR4UGss0OXWsn1_GeeIDG_A6fDwJK-d4fiIzbV-CCLN4XUpJjRLtt088Z6G62Dd-VLYrsS_s82iEl16hUdL_iu1OxRqkP3xsvk9BR_mTQSvMy-MuUHvAdOnXlhuh1f1hQaiH2MCPMcU3vAuEXyE8s8rjH4dFWQdvZn41FabdcmYEjoFczjgYQ8Lmmjz">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">Materia Prima</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Ojo de Bife a Punto</p>
+</div>
+</div>
+<div class="absolute top-space-sm right-space-sm w-9 h-9 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface text-[18px]">zoom_in</span>
+</div>
+</div>
+<!-- Photo 3: Wine & Table -->
+<div class="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer bg-surface-container shadow-lg gallery-item" data-caption="Copa de vino tinto Malbec argentino servido en mesa de restaurante a la luz tenue de las velas" data-full="placeholder">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Elegant wine glasses poured with deep red Argentine Malbec wine next to cutlery and warm candlelight on a dark rustic wooden table in restaurant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQbPgKbJFTq5i3xwRyWDqhHMBv6Imyj18AEis4ioBtYTCiw4t0gczuW0_X7OvZvGJvb8jGivWSq9KqERcNkgN5qt6MO-EAdCfj-1eJWrDFyF6lEZXDl2Sv0Bdhq42gmMupq0dWiH1YbuIaclpHrJ6AeP-v9MjSS12SJg_PZwupRSP2cHxVraH62tNMmTU-9Wu8MsJY8b4CLKFFP01XGI7ayVtajK_Cjsq-3fKNyQMQTBNePJTV96ES">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">Nuestra Bodega</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Maridaje &amp; Vinos</p>
+</div>
+</div>
+<div class="absolute top-space-sm right-space-sm w-9 h-9 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface text-[18px]">zoom_in</span>
+</div>
+</div>
+<!-- Photo 4: Asador al fuego -->
+<div class="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer bg-surface-container shadow-lg gallery-item" data-caption="Maestro parrillero controlando las brasas ardientes en parrilla de hierro fundido" data-full="placeholder">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up action shot of a master Argentine grill chef asador turning smoking steaks over fierce glowing orange coals with sparks flying" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtovXl-IvtzWI-9f5ITX8u02xJuQZuwAH3CFzoXfDwwQEePbmxgMaIYF29YsAS4vc5IA_U66fav5NIw7uHmcBKETQh9ERfBm-wzkcdi4Y2m1bVLK-5BY8CmhrJ7n5kNHisEvlhriXQabIEDxV4RiVjHvafZZbPS6ITdjgG3OpojeF1CVejKw1Vygia1a2xPmQwrXkx_BsO6d1PNx7YaKGe2IfvoWhTPVsfDAIqF6IS_oNCUofoB8S-">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">Oficio</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">El Asador en Acción</p>
+</div>
+</div>
+<div class="absolute top-space-sm right-space-sm w-9 h-9 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface text-[18px]">zoom_in</span>
+</div>
+</div>
+<!-- Photo 5: Provoleta & Pan -->
+<div class="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer bg-surface-container shadow-lg gallery-item" data-caption="Entrada caliente de provoleta crocante con hierbas aromáticas y panes de campo" data-full="placeholder">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Appetizer presentation of bubbly grilled provoleta cheese served with rustic sourdough bread toasts on blackened wood board with rosemary sprigs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS7Ealf6ehYYLQDb-4MwbPHd6cTkpHaCn943uOtRfEOC2ay2PxcX9xi_ErFVf--s9uP6dGAmka_fsLO8DP9WIWGrSAaxzEX3ugJ-PSCyukYTkcLnkcF_t2VnGhTeLD8CPY6vJSjwhoYkkwl4PKFi-uvoySBCxqGLLBhZEDNgqXd-u0nwvXvbj_n9Vrw9_nVwOZTnJDlpVJAlPYzTRi6C6uaGFbyN41iRXXZbMT2WKdCyRzyRIEbTx4">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">Entradas Calientes</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Provoleta &amp; Sabor Criollo</p>
+</div>
+</div>
+<div class="absolute top-space-sm right-space-sm w-9 h-9 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface text-[18px]">zoom_in</span>
+</div>
+</div>
+<!-- Photo 6: Ambiente Salón -->
+<div class="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer bg-surface-container shadow-lg gallery-item" data-caption="Salón principal con iluminación cálida, mesas de madera noble y atmósfera acogedora" data-full="placeholder">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Atmospheric dining room interior of a cozy dark Argentine grill restaurant with warm pendant amber lighting exposed brick walls and filled timber tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYEY5p3KoX9X_8ro4sNzutZKEkIeUpORkqPp9hZEl2swEL52K8npo0_rlhi4DtFOP8Df_f2gNN4b39cLMDWiJjzw_9U7x3U9w0B3JZIqIcuaZXWWF28QdiehwBYexkQua9lWpM_or1TlS40EYxcNkBMN0BNryAe1rD7alnlkDPaNECf1eokQVPCVlpEgHCQ9QFW1wEg29qZ1Y8LONOfVd3m727aXYkOx9fTK9MUKerakFTuBB_wuHC">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary">El Espacio</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Atmósfera &amp; Calidez</p>
+</div>
+</div>
+<div class="absolute top-space-sm right-space-sm w-9 h-9 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface text-[18px]">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================================================================= -->
+<!-- 7. INSTAGRAM SECTION                                              -->
+<!-- ================================================================= -->
+<section class="w-full py-space-3xl bg-surface relative">
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md mb-space-2xl">
+<div class="text-center sm:text-left">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary block mb-space-2xs">Comunidad</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Seguinos en Instagram</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Compartí tu momento etiquetando a <span class="text-tertiary font-semibold">@brazas.pehuajo</span></p>
+</div>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span class="">Ver Instagram</span>
+</a>
+</div>
+<!-- Instagram Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-space-sm">
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low shadow-sm" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank">
+<img alt="Post instagram Brazas Parrilla" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMgnDrKaSC2kXOKMgqM6jmN76lj_suGrzN83Ygyms3ksysr4a_bE7VNeim4lN9usLPzVIhURijcf8L6WVKOpAk67yq95BPv3RK97jTLWcZ7i8lUu73788IX4pUQoekjmvRg1OfPjh53c8eMD7az9bCliOB_KCWBci1DPdP-Ned57F9sKvSGSXLGupPfAAk4S9no2XSwMULukDZ1ohieCJ9ldLHQLBQrBgayd73Eba9xNUmSIaSnCV_">
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-space-xs text-on-surface font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">favorite</span> 184
+          </div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low shadow-sm" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank">
+<img alt="Post instagram Brazas Ojo de Bife" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ouuYDJDHG97H5_Y9ZTDDJLx3zpWqGKGBRTvNMGngvetSvC8DUcCIGFKekpR4UGss0OXWsn1_GeeIDG_A6fDwJK-d4fiIzbV-CCLN4XUpJjRLtt088Z6G62Dd-VLYrsS_s82iEl16hUdL_iu1OxRqkP3xsvk9BR_mTQSvMy-MuUHvAdOnXlhuh1f1hQaiH2MCPMcU3vAuEXyE8s8rjH4dFWQdvZn41FabdcmYEjoFczjgYQ8Lmmjz">
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-space-xs text-on-surface font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">favorite</span> 249
+          </div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low shadow-sm" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Churrasco steak sizzling over iron grill grate with smoke and red hot embers square shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3zhfmbWNiQIuaChmDgEV8fiTn2ZJh9-sEWCdfs433Gm4rUytAMN-OitQgcda3wZRdV7CXNs0COaT7i-jMLn0dW6VcpTEu-0uOpXT2uKhxjhf6HIKkGsAtErFdzOs9ZPAl53L4uhtEfoDTYkYvoJ0YSnTQgWRQq--c-LPUIG8OjUjBt1UgroQ8RA90Zha_a9F8qaoUCxzTewaBh9Xzx2EEI-G_jiGFGcng2AblI2qkwssxvzIUAU_D">
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-space-xs text-on-surface font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">favorite</span> 312
+          </div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low shadow-sm" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Friends raising wine glasses in celebratory toast around dark candlelit restaurant table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbB85QKnJQOZuUus-s0XoO4Hp3uNoM9PhaRdEXkv1awHIhccxfydvNIV8EQkOLdxDIU7PZoynhL8WgdaOy9nsMM9oFlX1QwrwWNes7NwCFMs_0nmMmyfTGmD0Xnr7PNikUJISIr6zPIwxeSnM7HHBleS8XsTz8XtQcNPjfnOEjPywFWVjUd-ZR6mXzy3X-rBsg82H8Gs3X4KTfKQHwAdQoMPYfP73plhFstFVEwbUPFVFpNLcqZuwV">
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-space-xs text-on-surface font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">favorite</span> 198
+          </div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low shadow-sm" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Fresh homemade chimichurri with parsley garlic red chili flakes poured into ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuSjNMHAG--JgUzRH9tmXOKkyonMPd2EEJwgc0UU0JRTzXs7zWRkzJ9XqewiMd7tP4mMW0M5igVQwc2IiPiduAxm_qGsLaUDpLM42XYUY_mcr6qO1kX-a7JL5xpMCbNenfRg1V4gGSflSAMuslGupLwo4HsIpjY8up153t9r7WEsUepc0wVynjLpjQCJYMN8eNGfZEpqvkIDj_5F9_a_hbSMPvU3S1KJkydDN2-mzgo28pUeH9DJsl">
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-space-xs text-on-surface font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">favorite</span> 157
+          </div>
+</a>
+<a class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low shadow-sm" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sizzling cast iron pan with chorizo and black sausage morcilla over open embers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPNi2WDCKgsOYJlWuMexPcpPDakzxDEdee1ddjRa9EqQPub3WKshgdfDzhBcp6mhu69vZGn0dqseLi9eK_oXuBPJLe7clEdJwcFzNs9JN5gPrKzGRuUZTVw3bltVrPaskUPo_YmiW2v_V00rH8mt45G0P0arDxFYw2zyAQ1NWjfpaZDAn4sJqMaFe1ne39LIAJNE-E6YwPyuVR1tnaFG-S-FQ-ssHVjwTaAWKibU7o_Sm3SNyIMs4n">
+<div class="absolute inset-0 bg-surface-container-lowest/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-space-xs text-on-surface font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">favorite</span> 275
+          </div>
+</a>
+</div>
+</div>
+</section>
+<!-- ================================================================= -->
+<!-- 8. UBICACIÓN & CONTACTO ("Encontranos en Pehuajó")                -->
+<!-- ================================================================= -->
+<section class="w-full py-space-4xl bg-surface-container-lowest relative" id="contacto">
+<div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+<!-- Contact Details Card -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary block mb-space-2xs">Visitanos</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-space-xs">Encontranos en Pehuajó</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Estamos listos para recibirte en un ambiente pensado para el disfrute.</p>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Item Dirección -->
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded bg-primary-container/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">location_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Dirección</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Av. San Martín (Número a confirmar)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Pehuajó, Provincia de Buenos Aires</span>
+</div>
+</div>
+<!-- Item WhatsApp -->
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded bg-primary-container/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">WhatsApp Directo</span>
+<a class="font-body-md text-body-md text-on-surface font-medium hover:text-primary transition-colors" href="https://wa.me/5492284606363" rel="noopener noreferrer" target="_blank">
+                  +54 9 2284 606363
+                </a>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Consultas y reservas directas</span>
+</div>
+</div>
+<!-- Item Horarios -->
+<div class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded bg-primary-container/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Días y Horarios</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Miércoles a Domingos: 20:00 a 00:30 hs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Domingos también al mediodía (12:30 a 15:30 hs)</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/60 italic">
+            * Los datos de ubicación exacta y horarios se actualizarán con la apertura definitiva.
+          </p>
+</div>
+<!-- Google Maps Embed Container -->
+<div class="lg:col-span-7 h-[420px] rounded-2xl overflow-hidden shadow-2xl bg-surface-container relative">
+<div class="w-full h-full bg-cover bg-center" data-location="Pehuajo, Buenos Aires, Argentina" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZ8xWIFpTd2kfblrVW5Ch-vbB_r1SVRCAv3SUGy3wZZazBUsT8DWajHpZY4YL8Ln6cHX4ly8QI-W46Rxxusb-GDQ-o0EojlKD2zwQE_LzlUS8KdCikE8Wwcx_LDJLkBa01ex7gprtuw3fe0Y9nYXwyCkPp6rDYW_XLqeyGJ8A4uTOrmyrCRfE8gFZ2wO37jqEujVWPGVg-Q3Z4zFv9vTa_XVyYmiKp817ao5lLPS4ut_qtq-06FmuZ')">
+<iframe class="w-full h-full border-0 filter grayscale invert contrast-125 opacity-80" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52254.91264879038!2d-61.93665792484083!3d-35.81182390196236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c0293d052d9dbd%3A0xe54b9d01f8047913!2sPehuaj%C3%B3%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar" title="Ubicación de BRAZAS en Pehuajó">
+</iframe>
+</div>
+<!-- Corner Floating Pin -->
+<div class="absolute bottom-space-md left-space-md p-space-sm rounded-lg bg-surface-container-lowest/90 backdrop-blur-md flex items-center gap-space-xs shadow-lg">
+<span class="material-symbols-outlined text-tertiary text-[20px]">restaurant</span>
+<span class="font-label-md text-label-md text-on-surface">BRAZAS · Pehuajó</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================================================================= -->
+<!-- 9. FINAL CALL TO ACTION                                          -->
+<!-- ================================================================= -->
+<section class="w-full py-space-4xl bg-surface relative overflow-hidden">
+<!-- Ambient ember glow background -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface via-primary-container/10 to-surface pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-secondary-container/20 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="relative z-10 max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop text-center flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-space-lg shadow-[0_0_30px_rgba(211,58,1,0.4)]">
+<span class="material-symbols-outlined text-tertiary text-[32px]">local_fire_department</span>
+</div>
+<h2 class="font-display-hero text-display-hero-mobile lg:text-headline-xl text-on-surface mb-space-sm">
+        ¿Nos vemos en la mesa?
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-2xl">
+        Reservá tu lugar y vení a disfrutar una experiencia única a las brasas en el corazón de Pehuajó.
+      </p>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-2xl py-space-md rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_4px_24px_rgba(211,58,1,0.5)]" href="#reservas">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+<span class="">🔥 Reservar mesa</span>
+</a>
+</div>
+</section>
+<!-- ================================================================= -->
+<!-- MODAL DE CONFIRMACIÓN DE RESERVA                                 -->
+<!-- ================================================================= -->
+<div class="fixed inset-0 z-50 flex items-center justify-center px-space-md bg-surface-container-lowest/80 backdrop-blur-md hidden transition-opacity" id="modal-confirmacion">
+<div class="bg-surface-container-high p-space-2xl rounded-2xl max-w-md w-full shadow-2xl flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-space-md text-tertiary">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-xs">¡Solicitud enviada!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+        Tu solicitud de reserva fue abierta en WhatsApp para ser enviada al equipo de <span class="text-tertiary font-semibold">BRAZAS</span>. Te confirmarán la mesa por ese medio a la brevedad.
+      </p>
+<button class="w-full py-space-sm rounded bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-highest transition-colors" id="btn-cerrar-modal" type="button">
+        Entendido
+      </button>
+</div>
+</div>
+<!-- ================================================================= -->
+<!-- LIGHTBOX / MODAL DE GALERÍA                                      -->
+<!-- ================================================================= -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-surface-container-lowest/95 backdrop-blur-lg hidden transition-opacity" id="lightbox-modal">
+<button aria-label="Cerrar imagen" class="absolute top-space-lg right-space-lg w-12 h-12 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors z-10" id="lightbox-close" type="button">
+<span class="material-symbols-outlined text-[28px]">close</span>
 </button>
-</div>
-<div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-sm" id="drawer-lista-items"></div>
-<div class="p-space-md bg-surface-container-low flex flex-col gap-space-xs shadow-inner border-t border-outline-variant/30">
-<div class="flex items-center justify-between pb-space-2xs">
-<span class="font-title-md text-on-surface font-semibold">Total Estimado:</span>
-<span class="font-headline-sm text-primary font-bold" id="drawer-total-precio">$0</span>
-</div>
-<div class="space-y-space-xs text-left" id="drawer-formulario">
-<div>
-<label class="font-label-sm text-on-surface block mb-1 font-semibold" for="cliente-nombre">Nombre y Apellido *</label>
-<input class="w-full bg-surface-container-lowest text-on-surface px-3 py-1.5 rounded-lg text-body-sm border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary/50" id="cliente-nombre" placeholder="Ej: Carlos Rossi" type="text"/>
-</div>
-<div class="grid grid-cols-2 gap-space-xs">
-<div>
-<label class="font-label-sm text-on-surface block mb-1 font-semibold" for="cliente-metodo">Modalidad</label>
-<select class="w-full bg-surface-container-lowest text-on-surface px-2 py-1.5 rounded-lg text-body-sm border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary/50" id="cliente-metodo" onchange="actualizarModoEntrega()">
-<option selected="" value="Retiro en el local">Retiro en el local</option>
-<option value="Envío a domicilio">Envío a domicilio</option>
-</select>
-</div>
-<div>
-<label class="font-label-sm text-on-surface block mb-1 font-semibold" for="cliente-horario">Horario</label>
-<select class="w-full bg-surface-container-lowest text-on-surface px-2 py-1.5 rounded-lg text-body-sm border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary/50" id="cliente-horario">
-<option value="Mañana (08:00 a 12:30)">Mañana (08:00 a 12:30)</option>
-<option value="Tarde (16:30 a 20:00)">Tarde (16:30 a 20:00)</option>
-<option value="Lo antes posible">Lo antes posible</option>
-</select>
+<div class="max-w-4xl max-h-[85vh] w-full flex flex-col items-center">
+<img alt="Vista ampliada" class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl mb-space-sm" id="lightbox-img" src="">
+<p class="font-body-md text-body-md text-tertiary text-center px-space-md" id="lightbox-caption"></p>
 </div>
 </div>
-<!-- Selector de Sucursal para Retiro en Local -->
-<div class="transition-all duration-200" id="contenedor-sucursales">
-<label class="font-label-sm text-on-surface block mb-1 font-semibold flex items-center gap-1" for="cliente-sucursal">
-<span class="material-symbols-outlined text-[16px] text-secondary">store</span>
-<span>Seleccionar Sucursal de Retiro *</span>
-</label>
-<select class="w-full bg-surface-container-lowest text-on-surface px-2.5 py-1.5 rounded-lg text-body-sm border border-outline-variant/50 focus:outline-none focus:ring-2 focus:ring-secondary/50" id="cliente-sucursal">
-<option value="Sucursal Centro (Av. San Martín 1420)">1. Sucursal Centro (Av. San Martín 1420)</option>
-<option value="Sucursal Norte (Av. Colón 2850)">2. Sucursal Norte (Av. Colón 2850)</option>
-<option value="Sucursal Pueblo Nuevo (Rivadavia 1940)">3. Sucursal Pueblo Nuevo (Rivadavia 1940)</option>
-</select>
-</div>
-<!-- Campo Dirección opcional para Envío a Domicilio -->
-<div class="hidden transition-all duration-200" id="contenedor-direccion">
-<label class="font-label-sm text-on-surface block mb-1 font-semibold flex items-center gap-1" for="cliente-direccion">
-<span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
-<span>Dirección de Entrega *</span>
-</label>
-<input class="w-full bg-surface-container-lowest text-on-surface px-3 py-1.5 rounded-lg text-body-sm border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary/50" id="cliente-direccion" placeholder="Ej: San Martín 1234, Timbre B" type="text"/>
-</div>
-<div>
-<label class="font-label-sm text-on-surface block mb-1 font-semibold" for="cliente-notas">Aclaraciones</label>
-<input class="w-full bg-surface-container-lowest text-on-surface px-3 py-1.5 rounded-lg text-body-sm border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-secondary/50" id="cliente-notas" placeholder="Ej: Medialunas mitad crema, mitad ddl" type="text"/>
-</div>
-</div>
-<div class="flex flex-col gap-1.5 pt-space-xs">
-<button class="w-full inline-flex items-center justify-center gap-space-xs bg-tertiary-container hover:bg-tertiary text-on-tertiary py-2.5 rounded-full font-label-lg shadow-sm transition-all" onclick="enviarPedidoWhatsApp()">
-<span class="material-symbols-outlined text-[20px]">send</span>
-<span class="">Enviar pedido a WhatsApp</span>
-</button>
-<button class="text-center font-label-sm text-on-surface-variant hover:text-error transition-colors py-1" onclick="vaciarCarrito()">
-            Vaciar pedido
-          </button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- TOAST NOTIFICACIÓN -->
-<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-primary-container text-on-primary px-space-md py-space-xs rounded-full shadow-lg flex items-center gap-space-xs transition-all duration-300 opacity-0 pointer-events-none transform translate-y-4" id="toast-notificacion">
-<span class="material-symbols-outlined text-[18px] text-secondary-container">check_circle</span>
-<span class="font-label-md" id="toast-mensaje">Producto agregado al pedido</span>
-</div>
+<!-- ================================================================= -->
+<!-- INLINE VANILLA JAVASCRIPT MICRO-INTERACTIONS                      -->
+<!-- ================================================================= -->
 <script>
-  const NUMERO_WHATSAPP_PANADERIA = "5492284606363";
-  const PRODUCTOS = [
-    { id: 1, nombre: "Medialunas de Manteca", categoria: "facturas", precio: 7800, unidad: "docena", descripcion: "Hojaldre artesanal con manteca pura y almíbar de naranja y vainilla.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuA3hmyRYfppFO7bWQsec98mbPow0GiSGsD_bPmdkjQd-JUz1u7T67S6ZX9EqVM0VjG-u0XNXJNfieldiA0Zx1LSCh3yQbMP8-SVpk7dQOpjvjTjeesvcKM3aBnMl-FPu0wJDVQmORTj02iLktye3otNJc6ta2ibXeHwPCQIMBPaoKnpKWmxjLDAYJDGE5XPi0U7Onh-LruwMyd8YNxXMWCIL4ScD-QyxFNB2C5_OqSWPuKhL5AH_rxx5zzrCgA6UEJYTp8", imageAlt: "Medialunas de manteca argentinas doradas y brillantes con almíbar artesanal" },
-    { id: 2, nombre: "Hogaza Masa Madre Campo", categoria: "panaderia", precio: 3600, unidad: "unidad", descripcion: "Fermentación natural de 36 hs. Harinas puras de trigo y centeno.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuDuX0Fcwbjx1rmrlvLqiETq4SZPVskJPX_eWEhcsta28J-kPGF7jEBaH4dm7t_UWqU37uZ6zM3KWxa5jRr2jryl-U1zJ57vi09F_ThEn8r5QyOsJgFLELJKZyTrX75W97mx2Je3nVQay7wqNv8mNqbf-crPpCDQfF54vf1SZaHiifHEUvDFCr6WsOcrv4sP9JJE_G0ec1EegrARaB9xfglhjSHnnRPqyl-EmhepYi50f67WmjTtQX2kQTbLhGiaCNNlIFE", imageAlt: "Hogaza redonda de pan de campo con harina espolvoreada y corteza rústica" },
-    { id: 3, nombre: "Sandwiches Triples Jamón & Queso", categoria: "sandwiches", precio: 14500, unidad: "docena", descripcion: "Pan de miga súper tierno, jamón natural y queso dambo de primera.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuDpDu36A3hcYPeopXWUfoTrXXAW1vRQ7a6Sb4aXdSG3bo-94Du84VgrUO8QAfcZmziwTlnP1yfbA5HfOp9I2IMjrFR5IeJrW99BF4r_ggHVFagOpCRk7NlC8ojzKD8lZRBS9Lg4bneam7h1p3w4TNoFDcWwe5TeFZMxFoinANBq60G-pM9e_nZRATNLOFn-nojwXjPyAYll-KXEbmbD4uoJB7erLNDmtP-2eqVhz4Y-fxskKd77MmMFhwQfk4DW-4LKILw", imageAlt: "Sandwiches de miga triples de jamón y queso dambo" },
-    { id: 4, nombre: "Tarta de Frutillas con Pastelera", categoria: "pasteleria", precio: 16200, unidad: "tarta entera", descripcion: "Masa sablée crocante, crema pastelera suave y frutillas frescas.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-DyqGehZufYfla6EQ2QhmitJbsubYGFUz7pt17WkVTLnpbNoeTVLSacSSYvuNZSlY9tgSFydj8FxHRMWNi820NloRUxw6kyasdk6ZQJfiSl9ZE74u8Gj28dPk-pftXTbGgR7rgSQTgb40xQv5EQlnGyfhDRXYrhF5BBMTG-OKokLYbbJb-7eVK1aztiAjgtVxBLnLRgQeN4RfSkULSnuLLqmAYKE7hF7rT_xBEWe4A_TnwfPhuRy7tPzLwBtCYoWW1Hk", imageAlt: "Tarta artesanal con frutas y crema pastelera" },
-    { id: 10, nombre: "Pan Francés Tradicional", categoria: "panaderia", precio: 2400, unidad: "kg", descripcion: "Corteza crocante y miga suave y aireada. Horneado 4 veces al día.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuDDy1FT9pDpgpdBMFjHsZJjb4gCX9fEV7K_3YNJC6Sb7HVtOy2cga1FIzP8HubG9TFwXv7dL-rmDaf5oQZUHFTDjKVdbFQd12Jt53zvbt14iNGybUttuuiOu5Tm40lLQioBdgRT5ao504b4cu99baGMUJ2WLqrjBrSSakkJL2M4pVrKCA75TdQ7TOnDZMhV-XdAGoC34k5D28XmqSqwBH-NyoKsZKs21OpGmIu_6ezqAGP6epvwkfk7wW8Gdc-jbU3sGXM", imageAlt: "Pan francés y panes artesanales tradicionales" },
-    { id: 18, nombre: "Alfajorcitos de Maicena", categoria: "pasteleria", precio: 5200, unidad: "docena", descripcion: "Masa tierna que se deshace en la boca con puro dulce de leche y coco.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuDCpU0olO1Z7qesmlRYh9J6bJjFQ4fFR92DknTskgW4ZWwHYxFcvVKBysSixUtjGhzQ56iNhS8rN2OnFX9RfvX3yMe8G2FL7eQ4xbIAZQFlWlcbVmZhU-WefD9FK3m7zhGDq56VL_fU2xp-X2OJJfv8kJygc2H2PNvN4KfKjLWeSTP3D2b5xX37KyF_zrv450Bug8zg8qWDLnJMwiQbMwDaq8Mh4-VYvCNkO-FhtdeWlb2SrlBbpX5E_ao_D8OFn7g9ZF8", imageAlt: "Alfajorcitos de maicena con dulce de leche y coco" },
-    { id: 23, nombre: "Chipá Tradicional de Queso", categoria: "sandwiches", precio: 4500, unidad: "1/2 kg", descripcion: "Almidón de mandioca puro con mix de quesos reggianito y sardo estacionados.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuAAB1cXNIdFnzVwn3pTm4SUmqmf1p7_ZSK7eDzz8OXRAlbQYWjJTG--3xe3ejeowpmSWSRsdmxffs8tfSyVmLXL9TUVb0HBPtWadRB7IHkTdRLPA4dvkJEySAbXqBieP-YJAWysglnu1eQcRTPFbZhAdTzxaRRuFRZid-t_JhcsIq84bFGpPR52hsXB5EQEteqgRw5t8gh_nue08tTKUpXK7n-YaC6rwV9Bm6VNqlwQYOEL9G2zxB7KdmvXcajPGoTIFTg", imageAlt: "Chipa caliente tradicional de queso recién horneado" },
-    { id: 101, nombre: "Combo Criollo Desayuno", categoria: "combos", precio: 5400, unidad: "combo", descripcion: "1/2 docena de medialunas de manteca + 1 Pan de campo de 500g.", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuAO521yQtSGq3nby4MbYKTT-crSNWb9wavWMGQJcTMaZqoOADbjeNLYsgrzGfBSKSygQA6x2a0auo1GhFVME1oPCZKyrSuIHnWzpzgOg7RaBJlFLrV8t6AEnookfjdHKDVVWDARDL-o5NYtDZAjjJ3v1YXFUpIvqo_76CQZedyTJdA-ZuCm5cGi9m2XGm-iwLSGQeLf53AgxsHaCmNiGAvMg52eQfrJcQLAbH5AUVwRg9nyb618tYFQyG7RaZEJXlvth9A", imageAlt: "Combo desayuno medialunas y pan de campo" },
-    { id: 104, nombre: "Combo Fiesta Miga (24 Triples)", categoria: "combos", precio: 24900, unidad: "caja 24 u", descripcion: "24 triples surtidos clásicos (jamón cocido, queso, primavera y huevo).", imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuCa2XXKa8Dv78n6PiN6lp6eFHHj4PtyJHb3H8IzdnQiZwFXUnWLHYW1mfh6BK3xYtf75rzxWRsb51ZBrPYd3nDh9c_e1XoKGn6PQN6ATRVJbvFUPaDV3DOznOKLXTFcyp_BDyDV2gYgYE_6-Rvsuh5udglSGWvF0JTnFzzm3cu_A7S21Uw2_VI2dnk6fuTM62Zkp8Hx8EpzRnyBcwvKguCrxqebllNRkKwGEBCxCkQOqueVi1Mf7wzuVd5kxqIy27eL6g8", imageAlt: "Caja surtida de 24 triples de miga" }
-  ];
+    (function() {
+      // 1. Initial Defaults for Reservation
+      const today = new Date();
+      const nextDay = new Date(today);
+      nextDay.setDate(today.getDate() + 1);
+      const defaultDateStr = nextDay.toISOString().split('T')[0];
 
-  let carrito = [];
-  let categoriaActiva = "todos";
-  const cantidadesTarjetas = {};
+      const inputFecha = document.getElementById('res-fecha');
+      const inputNombre = document.getElementById('res-nombre');
+      const inputTel = document.getElementById('res-telefono');
+      const inputObs = document.getElementById('res-obs');
 
-  function inicializarCantidades() {
-    PRODUCTOS.forEach(p => {
-      if (!cantidadesTarjetas[p.id]) {
-        cantidadesTarjetas[p.id] = 1;
+      const summaryFecha = document.getElementById('summary-fecha');
+      const summaryHorario = document.getElementById('summary-horario');
+      const summaryPax = document.getElementById('summary-pax');
+      const summaryNombre = document.getElementById('summary-nombre');
+      const summaryTel = document.getElementById('summary-tel');
+      const summaryObs = document.getElementById('summary-obs');
+
+      let selectedTime = '21:00';
+      let selectedPax = '2 personas';
+
+      if (inputFecha) {
+        inputFecha.value = defaultDateStr;
+        summaryFecha.textContent = defaultDateStr;
+        inputFecha.min = today.toISOString().split('T')[0];
+        inputFecha.addEventListener('change', (e) => {
+          summaryFecha.textContent = e.target.value || 'Seleccionar fecha';
+        });
       }
-    });
-  }
 
-  function modificarCantidadTarjeta(idProducto, delta) {
-    if (!cantidadesTarjetas[idProducto]) cantidadesTarjetas[idProducto] = 1;
-    cantidadesTarjetas[idProducto] = Math.max(1, cantidadesTarjetas[idProducto] + delta);
-    const el = document.getElementById(`cant-card-${idProducto}`);
-    if (el) {
-      el.textContent = cantidadesTarjetas[idProducto];
-    }
-  }
-
-  function renderizarCatalogo(lista) {
-    const contenedor = document.getElementById("grilla-catalogo");
-    const emptyState = document.getElementById("sin-resultados");
-    if (!contenedor) return;
-    if (lista.length === 0) {
-      contenedor.innerHTML = "";
-      if (emptyState) emptyState.classList.remove("hidden");
-      return;
-    }
-    if (emptyState) emptyState.classList.add("hidden");
-    contenedor.innerHTML = lista.map(prod => {
-      const cant = cantidadesTarjetas[prod.id] || 1;
-      return `
-      <div class="bg-surface-container-lowest rounded-2xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-        <div>
-          <div class="w-full aspect-[4/3] rounded-xl overflow-hidden mb-space-xs bg-surface-container-low relative">
-            <img src="${prod.imagen}" alt="${prod.imageAlt}" class="w-full h-full object-cover">
-            <span class="absolute bottom-2 left-2 bg-surface/90 backdrop-blur-sm text-on-surface font-label-xs px-2 py-0.5 rounded-full capitalize font-semibold">
-              ${prod.categoria}
-            </span>
-          </div>
-          <h3 class="font-title-md text-primary font-bold leading-tight mt-1">${prod.nombre}</h3>
-          <p class="font-body-sm text-on-surface-variant mt-1 mb-space-sm line-clamp-2">${prod.descripcion}</p>
-        </div>
-        <div class="pt-space-xs flex items-center justify-between border-t border-outline-variant/20 gap-2">
-          <div class="shrink-0">
-            <span class="font-label-xs text-on-surface-variant block">Por ${prod.unidad}</span>
-            <span class="font-title-md text-primary-container font-bold">$${prod.precio.toLocaleString('es-AR')}</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-full">
-              <button onclick="modificarCantidadTarjeta(${prod.id}, -1)" class="w-6 h-6 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" title="Disminuir">
-                <span class="material-symbols-outlined text-[15px]">remove</span>
-              </button>
-              <span id="cant-card-${prod.id}" class="font-label-md w-5 text-center font-bold text-on-surface">${cant}</span>
-              <button onclick="modificarCantidadTarjeta(${prod.id}, 1)" class="w-6 h-6 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" title="Aumentar">
-                <span class="material-symbols-outlined text-[15px]">add</span>
-              </button>
-            </div>
-            <button onclick="agregarAlPedidoConCantidad(${prod.id})" class="inline-flex items-center gap-1 bg-primary-container hover:bg-primary text-on-primary px-3 sm:px-3.5 py-1.5 rounded-full font-label-sm shadow-xs transition-all active:scale-95">
-              <span class="material-symbols-outlined text-[16px]">add</span>
-              <span>Agregar</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    `;
-    }).join('');
-  }
-
-  function filtrarPorCategoria(categoria) {
-    categoriaActiva = categoria;
-    document.querySelectorAll('.cat-filter-btn').forEach(btn => {
-      btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
-      btn.classList.add('bg-surface-container', 'text-on-surface-variant');
-    });
-    const btnActivo = document.getElementById(`btn-cat-${categoria}`);
-    if (btnActivo) {
-      btnActivo.classList.remove('bg-surface-container', 'text-on-surface-variant');
-      btnActivo.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
-    }
-    const buscador = document.getElementById("buscador-productos");
-    if (buscador) buscador.value = "";
-    if (categoria === 'todos') {
-      renderizarCatalogo(PRODUCTOS);
-    } else {
-      renderizarCatalogo(PRODUCTOS.filter(p => p.categoria === categoria));
-    }
-  }
-
-  function buscarProductos(termino) {
-    const term = termino.toLowerCase().trim();
-    let resultado = PRODUCTOS;
-    if (categoriaActiva !== 'todos') {
-      resultado = resultado.filter(p => p.categoria === categoriaActiva);
-    }
-    if (term !== "") {
-      resultado = resultado.filter(p =>
-        p.nombre.toLowerCase().includes(term) ||
-        p.descripcion.toLowerCase().includes(term) ||
-        p.categoria.toLowerCase().includes(term)
-      );
-    }
-    renderizarCatalogo(resultado);
-  }
-
-  function agregarAlPedidoConCantidad(idProducto) {
-    const prod = PRODUCTOS.find(p => p.id === idProducto);
-    if (!prod) return;
-    const cantidadASumar = cantidadesTarjetas[idProducto] || 1;
-    const existente = carrito.find(item => item.id === idProducto);
-    if (existente) {
-      existente.cantidad += cantidadASumar;
-    } else {
-      carrito.push({
-        id: prod.id,
-        nombre: prod.nombre,
-        precio: prod.precio,
-        unidad: prod.unidad,
-        cantidad: cantidadASumar
+      // 2. Horario Pills Selection
+      const timePills = document.querySelectorAll('.time-pill');
+      timePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          timePills.forEach(p => {
+            p.classList.remove('bg-primary-container', 'text-on-primary-container');
+            p.classList.add('bg-surface', 'text-on-surface');
+          });
+          pill.classList.remove('bg-surface', 'text-on-surface');
+          pill.classList.add('bg-primary-container', 'text-on-primary-container');
+          selectedTime = pill.getAttribute('data-time');
+          summaryHorario.textContent = selectedTime + ' hs';
+        });
       });
-    }
-    cantidadesTarjetas[idProducto] = 1;
-    const el = document.getElementById(`cant-card-${idProducto}`);
-    if (el) el.textContent = "1";
-    actualizarBadges();
-    mostrarToast(`Agregaste (${cantidadASumar}) ${prod.nombre}`);
-    renderizarItemsDrawer();
-  }
 
-  function agregarAlPedido(idProducto) {
-    agregarAlPedidoConCantidad(idProducto);
-  }
+      // 3. Comensales Pills Selection
+      const paxPills = document.querySelectorAll('.pax-pill');
+      paxPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          paxPills.forEach(p => {
+            p.classList.remove('bg-primary-container', 'text-on-primary-container');
+            p.classList.add('bg-surface', 'text-on-surface');
+          });
+          pill.classList.remove('bg-surface', 'text-on-surface');
+          pill.classList.add('bg-primary-container', 'text-on-primary-container');
+          selectedPax = pill.getAttribute('data-pax');
+          summaryPax.textContent = selectedPax;
+        });
+      });
 
-  function cambiarCantidad(idProducto, delta) {
-    const item = carrito.find(p => p.id === idProducto);
-    if (!item) return;
-    item.cantidad += delta;
-    if (item.cantidad <= 0) {
-      carrito = carrito.filter(p => p.id !== idProducto);
-    }
-    actualizarBadges();
-    renderizarItemsDrawer();
-  }
+      // 4. Live Typing Updates
+      inputNombre.addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        summaryNombre.textContent = val || 'Completar nombre';
+        summaryNombre.className = val ? 'font-medium text-on-surface' : 'font-medium text-on-surface-variant/70 italic';
+      });
 
-  function eliminarItem(idProducto) {
-    carrito = carrito.filter(p => p.id !== idProducto);
-    actualizarBadges();
-    renderizarItemsDrawer();
-  }
+      inputTel.addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        summaryTel.textContent = val || 'Completar teléfono';
+        summaryTel.className = val ? 'font-medium text-on-surface' : 'font-medium text-on-surface-variant/70 italic';
+      });
 
-  function vaciarCarrito() {
-    carrito = [];
-    actualizarBadges();
-    renderizarItemsDrawer();
-  }
+      inputObs.addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        summaryObs.textContent = val || 'Ninguna';
+        summaryObs.className = val ? 'font-body-sm text-body-sm text-on-surface' : 'font-body-sm text-body-sm text-on-surface-variant/70 italic';
+      });
 
-  function calcularTotal() {
-    return carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
-  }
+      // 5. WhatsApp Integration Trigger
+      const btnWhatsapp = document.getElementById('btn-whatsapp-reserva');
+      const modalConfirmacion = document.getElementById('modal-confirmacion');
+      const btnCerrarModal = document.getElementById('btn-cerrar-modal');
 
-  function contarTotalItems() {
-    return carrito.reduce((acc, item) => acc + item.cantidad, 0);
-  }
+      btnWhatsapp.addEventListener('click', () => {
+        const fecha = inputFecha.value || 'A coordinar';
+        const nombre = inputNombre.value.trim();
+        const telefono = inputTel.value.trim();
+        const obs = inputObs.value.trim() || 'Ninguna';
 
-  function actualizarBadges() {
-    const count = contarTotalItems();
-    const headerPill = document.querySelector('header a[data-path="pedido"] span:last-child');
-    if (headerPill) headerPill.textContent = `(${count})`;
-    const drawerBadge = document.getElementById("drawer-contador-badge");
-    if (drawerBadge) drawerBadge.textContent = `${count} ${count === 1 ? 'ítem' : 'ítems'}`;
-  }
+        if (!nombre) {
+          inputNombre.focus();
+          inputNombre.classList.add('ring-2', 'ring-secondary-container');
+          setTimeout(() => inputNombre.classList.remove('ring-2', 'ring-secondary-container'), 2500);
+          return;
+        }
 
-  function renderizarItemsDrawer() {
-    const contenedor = document.getElementById("drawer-lista-items");
-    const totalEl = document.getElementById("drawer-total-precio");
-    if (!contenedor || !totalEl) return;
-    totalEl.textContent = `$${calcularTotal().toLocaleString('es-AR')}`;
-    if (carrito.length === 0) {
-      contenedor.innerHTML = `
-        <div class="flex flex-col items-center justify-center py-12 text-center my-auto">
-          <span class="material-symbols-outlined text-secondary text-[40px] mb-2 opacity-60">shopping_bag</span>
-          <p class="font-title-md text-primary font-bold">Tu pedido está vacío</p>
-          <p class="font-body-sm text-on-surface-variant max-w-xs mt-1">Elegí tus medialunas, panes o combos favoritos para armar tu pedido.</p>
-        </div>
-      `;
-      return;
-    }
-    contenedor.innerHTML = carrito.map(item => `
-      <div class="flex items-center justify-between p-space-xs bg-surface-container rounded-xl">
-        <div class="flex flex-col flex-1 pr-2">
-          <h4 class="font-title-sm text-on-surface font-semibold line-clamp-1">${item.nombre}</h4>
-          <span class="font-label-xs text-on-surface-variant">$${item.precio.toLocaleString('es-AR')} / ${item.unidad}</span>
-          <span class="font-title-md text-primary-container font-bold mt-0.5">$${(item.precio * item.cantidad).toLocaleString('es-AR')}</span>
-        </div>
-        <div class="flex items-center gap-space-2xs bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-inner">
-          <button onclick="cambiarCantidad(${item.id}, -1)" class="w-5 h-5 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container" title="Reducir">
-            <span class="material-symbols-outlined text-[14px]">remove</span>
-          </button>
-          <span class="font-label-md w-5 text-center font-bold text-on-surface">${item.cantidad}</span>
-          <button onclick="cambiarCantidad(${item.id}, 1)" class="w-5 h-5 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container" title="Aumentar">
-            <span class="material-symbols-outlined text-[14px]">add</span>
-          </button>
-        </div>
-        <button onclick="eliminarItem(${item.id})" class="ml-2 text-on-surface-variant hover:text-error transition-colors p-1" title="Eliminar">
-          <span class="material-symbols-outlined text-[16px]">delete</span>
-        </button>
-      </div>
-    `).join('');
-  }
+        // WhatsApp Argentina Target Number: 5492284606363
+        const targetPhone = '5492284606363';
+        
+        const messageText = 
+`Hola Brazas! 🔥
+Quiero reservar una mesa.
+👤 Nombre: ${nombre}
+📱 Teléfono: ${telefono || 'No especificado'}
+📅 Fecha: ${fecha}
+🕐 Hora: ${selectedTime} hs
+👥 Personas: ${selectedPax}
+📝 Observaciones: ${obs}
 
-  function actualizarModoEntrega() {
-    const metodoEl = document.getElementById("cliente-metodo");
-    const contenedorSucursal = document.getElementById("contenedor-sucursales");
-    const contenedorDireccion = document.getElementById("contenedor-direccion");
-    if (!metodoEl || !contenedorSucursal) return;
+¡Gracias!`;
 
-    if (metodoEl.value === "Retiro en el local") {
-      contenedorSucursal.classList.remove("hidden");
-      if (contenedorDireccion) contenedorDireccion.classList.add("hidden");
-    } else {
-      contenedorSucursal.classList.add("hidden");
-      if (contenedorDireccion) contenedorDireccion.classList.remove("hidden");
-    }
-  }
+        const encodedMsg = encodeURIComponent(messageText);
+        const waUrl = `https://wa.me/${targetPhone}?text=${encodedMsg}`;
 
-  function abrirCarrito() {
-    renderizarItemsDrawer();
-    actualizarModoEntrega();
-    const drawer = document.getElementById("drawer-pedido");
-    const panel = document.getElementById("drawer-panel");
-    if (!drawer || !panel) return;
-    drawer.classList.remove("pointer-events-none", "opacity-0");
-    drawer.classList.add("opacity-100");
-    panel.classList.remove("translate-x-full");
-  }
+        // Open WhatsApp window
+        window.open(waUrl, '_blank');
 
-  function cerrarCarrito() {
-    const drawer = document.getElementById("drawer-pedido");
-    const panel = document.getElementById("drawer-panel");
-    if (!drawer || !panel) return;
-    panel.classList.add("translate-x-full");
-    drawer.classList.remove("opacity-100");
-    drawer.classList.add("opacity-0", "pointer-events-none");
-  }
+        // Show confirmation notice modal
+        if (modalConfirmacion) {
+          modalConfirmacion.classList.remove('hidden');
+        }
+      });
 
-  function enviarPedidoWhatsApp() {
-    if (carrito.length === 0) {
-      alert("Tu pedido está vacío. Por favor añadí productos antes de enviar.");
-      return;
-    }
-    const nombreEl = document.getElementById("cliente-nombre");
-    const nombre = nombreEl ? nombreEl.value.trim() : "";
-    const metodoEl = document.getElementById("cliente-metodo");
-    const metodo = metodoEl ? metodoEl.value : "Retiro en el local";
-    const horarioEl = document.getElementById("cliente-horario");
-    const horario = horarioEl ? horarioEl.value : "Mañana";
-    const notasEl = document.getElementById("cliente-notas");
-    const notas = notasEl ? notasEl.value.trim() : "";
-    const sucursalEl = document.getElementById("cliente-sucursal");
-    const sucursal = sucursalEl ? sucursalEl.value : "Sucursal Centro (Av. San Martín 1420)";
-    const direccionEl = document.getElementById("cliente-direccion");
-    const direccion = direccionEl ? direccionEl.value.trim() : "";
+      if (btnCerrarModal && modalConfirmacion) {
+        btnCerrarModal.addEventListener('click', () => {
+          modalConfirmacion.classList.add('hidden');
+        });
+        modalConfirmacion.addEventListener('click', (e) => {
+          if (e.target === modalConfirmacion) {
+            modalConfirmacion.classList.add('hidden');
+          }
+        });
+      }
 
-    if (!nombre) {
-      alert("Por favor indicanos tu Nombre y Apellido.");
-      if (nombreEl) nombreEl.focus();
-      return;
-    }
+      // 6. Menu Filter Tabs
+      const menuTabs = document.querySelectorAll('.menu-tab');
+      const menuItems = document.querySelectorAll('.menu-item');
 
-    if (metodo === "Envío a domicilio" && !direccion) {
-      alert("Por favor indicanos la dirección de entrega.");
-      if (direccionEl) direccionEl.focus();
-      return;
-    }
+      menuTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          menuTabs.forEach(t => {
+            t.classList.remove('bg-primary-container', 'text-on-primary-container');
+            t.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          tab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          tab.classList.add('bg-primary-container', 'text-on-primary-container');
 
-    let mensaje = `🥖 *PEDIDO - PANADERÍA SANTA TERESITA* 🥖%0A%0A`;
-    mensaje += `👤 *Cliente:* ${encodeURIComponent(nombre)}%0A`;
-    mensaje += `📦 *Modalidad:* ${encodeURIComponent(metodo)}%0A`;
-    
-    if (metodo === "Retiro en el local") {
-      mensaje += `📍 *Retiro en:* ${encodeURIComponent(sucursal)}%0A`;
-    } else {
-      mensaje += `🏠 *Dirección de envío:* ${encodeURIComponent(direccion)}%0A`;
-    }
+          const category = tab.getAttribute('data-cat');
+          menuItems.forEach(item => {
+            const itemCat = item.getAttribute('data-item-cat');
+            if (category === 'carnes' && itemCat === 'carnes') {
+              item.style.display = 'flex';
+            } else if (itemCat === category) {
+              item.style.display = 'flex';
+            } else if (category === 'carnes') {
+              // Show carnes + all on first tab if desired, or strictly carnes
+              item.style.display = itemCat === 'carnes' ? 'flex' : 'none';
+            } else {
+              item.style.display = (itemCat === category) ? 'flex' : 'none';
+            }
+          });
+        });
+      });
 
-    mensaje += `⏰ *Horario estimado:* ${encodeURIComponent(horario)}%0A`;
-    if (notas) mensaje += `📝 *Aclaraciones:* ${encodeURIComponent(notas)}%0A`;
-    mensaje += `%0A-------------------------------%0A`;
-    mensaje += `📋 *DETALLE DEL PEDIDO:*%0A`;
-    carrito.forEach(item => {
-      const subtotal = item.precio * item.cantidad;
-      mensaje += `• ${item.cantidad}x ${encodeURIComponent(item.nombre)} (${encodeURIComponent(item.unidad)}) - $${subtotal.toLocaleString('es-AR')}%0A`;
-    });
-    mensaje += `-------------------------------%0A`;
-    mensaje += `💰 *TOTAL ESTIMADO: $${calcularTotal().toLocaleString('es-AR')}*%0A%0A`;
-    mensaje += `¡Muchas gracias! Aguardo confirmación de la panadería.`;
-    const urlWhatsApp = `https://wa.me/${NUMERO_WHATSAPP_PANADERIA}?text=${mensaje}`;
-    window.open(urlWhatsApp, '_blank');
-  }
+      // 7. Lightbox Modal for Gallery
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const lightboxClose = document.getElementById('lightbox-close');
 
-  function mostrarToast(mensaje) {
-    const toast = document.getElementById("toast-notificacion");
-    const toastMsg = document.getElementById("toast-mensaje");
-    if (!toast || !toastMsg) return;
-    toastMsg.textContent = mensaje;
-    toast.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
-    toast.classList.add("opacity-100", "translate-y-0");
-    setTimeout(() => {
-      toast.classList.remove("opacity-100", "translate-y-0");
-      toast.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
-    }, 2200);
-  }
+      galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const fullSrc = item.getAttribute('data-full');
+          const caption = item.getAttribute('data-caption') || '';
+          const imgElem = item.querySelector('img');
 
-  inicializarCantidades();
-  renderizarCatalogo(PRODUCTOS);
-  actualizarBadges();
-</script></div></main><footer class="w-full bg-surface-container-low text-on-surface mt-space-3xl"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="Santa Teresita Panadería" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhAUAuE3aQKcQx6vTeaCFO9UsePzJgOj1pxZ2n2t3tJM72dYXcwBoD1rlkB5YTqk82-qNv9jB2S3WsW783aD6wHSivt9Ppj30m5heDm5Vr5ONVsgpgUq-gEpaKqP1o-4LjR69y5FaLVMhNIaxnD8WY7in4_xg_EbcASiWoVQZTD3_eO7rqW4CWwfncjF7s1cVK0eqJJoX6gxYsBM_QVh_FhMQAbrUA0Laj2jOgBfLYo2w_prHMUEwyBivdLUZOyYidasQ"/><span class="font-headline-sm text-headline-sm text-primary">Santa Teresita</span></div><p class="font-body-md text-body-md text-on-surface-variant">Maestros panaderos desde 1979. Fermentaciones lentas, masa madre y harinas puras para llevar a tu mesa el aroma del buen pan en nuestras 3 sucursales.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer transition-colors">photo_camera</span><span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer transition-colors">public</span><span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer transition-colors">share</span></div></div><div class="flex flex-col gap-space-xs"><h4 class="font-title-md text-title-md text-primary">Horarios de Horneado</h4><p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>Lunes a Sábados: 06:30 - 20:30 hs</p><p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>Domingos y Feriados: 07:30 - 13:30 hs</p><span class="font-label-sm text-label-sm text-secondary mt-space-2xs">* Pan recién sacado a las 07:00 y 16:30 hs</span></div><div class="flex flex-col gap-space-xs"><h4 class="font-title-md text-title-md text-primary">Nuestras 3 Sucursales</h4><p class="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-space-2xs"><span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">location_on</span>Centro: Av. San Martín 1420</p><p class="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-space-2xs"><span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">location_on</span>Norte: Av. Colón 2850</p><p class="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-space-2xs"><span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">location_on</span>Pueblo Nuevo: Rivadavia 1940</p><p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-space-2xs pt-1"><a class="hover:text-primary transition-colors flex items-center gap-space-2xs" href="tel:+5492284606363"><span class="material-symbols-outlined text-[18px] text-secondary">call</span>+54 9 2284 60-6363</a></p></div><div class="flex flex-col gap-space-sm bg-surface-container rounded-xl p-space-md shadow-[0_1px_8px_rgba(74,46,24,0.04)]"><span class="font-headline-sm text-headline-sm text-primary">Encargos Rápidos</span><p class="font-body-sm text-body-sm text-on-surface-variant">¿Tenés un evento o querés retirar medialunas calientes? Elegí tu sucursal más cercana y chateá con nosotros.</p><a class="inline-flex items-center justify-center gap-space-xs bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-lg text-label-lg px-space-md py-space-xs rounded-full shadow-[0_8px_24px_-2px_rgba(37,211,102,0.35)] transition-all" href="https://wa.me/5492284606363" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[20px]">chat</span>WhatsApp Obrador</a></div></div><div class="mt-space-2xl pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Panadería y Pastelería Santa Teresita. Hecho con dedicación en nuestras 3 sucursales.</p><div class="font-title-md text-title-md text-primary font-headline-sm italic flex items-center gap-space-2xs"><span class="">Gracias por elegirnos ❤️</span></div></div></div></footer><a aria-label="Pedir por WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center gap-space-xs bg-tertiary-container hover:bg-tertiary text-on-tertiary px-space-md py-space-sm rounded-full shadow-[0_8px_24px_-2px_rgba(37,211,102,0.35)] transition-all duration-300 hover:scale-105 group" href="https://wa.me/5492284606363" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[24px]">chat</span></a></body></html>
+          lightboxImg.src = fullSrc === 'placeholder' ? (imgElem ? imgElem.src : 'placeholder') : fullSrc;
+          lightboxCaption.textContent = caption;
+          lightboxModal.classList.remove('hidden');
+        });
+      });
+
+      if (lightboxClose && lightboxModal) {
+        lightboxClose.addEventListener('click', () => {
+          lightboxModal.classList.add('hidden');
+        });
+        lightboxModal.addEventListener('click', (e) => {
+          if (e.target === lightboxModal) {
+            lightboxModal.classList.add('hidden');
+          }
+        });
+      }
+
+    })();
+  </script>
+</div></main><div class="fixed bottom-space-md left-space-md right-space-md z-40 lg:hidden flex justify-center pointer-events-none"><a class="pointer-events-auto w-full max-w-sm flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg tracking-wider shadow-[0_8px_24px_rgba(0,0,0,0.8),0_0_20px_rgba(139,30,15,0.4)] hover:bg-secondary-container hover:text-on-secondary-container transition-all" href="#reservas"><span class="material-symbols-outlined text-tertiary text-[20px]">local_fire_department</span><span class="">Reservar mesa</span></a></div><footer class="w-full bg-surface-container-lowest pt-space-3xl pb-space-4xl lg:pb-space-2xl text-on-surface-variant"><div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-2xl pb-space-2xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-2xs"><span class="font-headline-md text-headline-md tracking-wider text-on-surface">BRAZAS</span><span class="material-symbols-outlined text-tertiary text-[18px]">local_fire_department</span></div><p class="font-headline-sm text-headline-sm italic text-tertiary">El sabor del fuego.</p><p class="font-body-sm text-body-sm text-on-surface-variant/80 mt-space-2xs">Parrilla de autor, brasas de quebracho y cortes selectos en el corazón de Pehuajó.</p></div><div class="flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-tertiary">Navegación</span><div class="flex flex-col gap-space-xs font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#hero">Inicio</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#propuesta">Nuestra propuesta</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#menu">Menú de Cortes &amp; Vinos</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#galeria">Galería del Asador</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#reservas">Reservas</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#contacto">Contacto</a></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-tertiary">Ubicación &amp; Contacto</span><div class="flex flex-col gap-space-xs font-body-sm text-body-sm"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">location_on</span><span class="">Pehuajó, Buenos Aires, Argentina</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">call</span><span class="">WhatsApp Reservas Directas</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">schedule</span><span class="">Miércoles a Domingo · 20:00 a 01:00</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-tertiary">Comunidad &amp; Fuego</span><p class="font-body-sm text-body-sm text-on-surface-variant/80">Viví la experiencia culinaria detrás del fogón a diario.</p><div class="flex flex-col gap-space-xs"><a class="inline-flex items-center gap-space-xs text-on-surface hover:text-tertiary transition-colors font-label-md text-label-md tracking-wider" href="https://instagram.com/brazas.pehuajo" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">photo_camera</span><span class="">@brazas.pehuajo</span></a><a class="inline-flex items-center gap-space-xs text-primary hover:text-on-primary-container transition-colors font-label-md text-label-md tracking-wider" href="#reservas"><span class="material-symbols-outlined text-[18px]">chat</span><span class="">WhatsApp Oficial</span></a></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant/70 font-body-sm text-body-sm"><p class="">© 2025 BRAZAS Parrilla Argentina. Todos los derechos reservados.</p><p class="text-right">Pehuajó, Provincia de Buenos Aires.</p></div></div></footer>
+
+</body></html>
