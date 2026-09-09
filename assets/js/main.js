@@ -223,7 +223,6 @@
     message += itemsText;
     message += `------------------------------------\n`;
     message += `💰 *TOTAL A PAGAR:* ${formatCurrency(totalPrice)}\n\n`;
-    message += `_Enviado desde brazasparrilla.com - Aguardo confirmación de tiempo estimado._`;
 
     const encoded = encodeURIComponent(message);
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
@@ -232,7 +231,7 @@
   }
 
   // Active Menu Scrollspy & Smooth Click handling
-  const navLinks = document.querySelectorAll('#top-nav .nav-link');
+  const navLinks = document.querySelectorAll('#top-nav .nav-link, #mobile-menu .mobile-nav-link');
   const sections = [
     { id: 'hero', navPaths: ['inicio'] },
     { id: 'asador', navPaths: ['asador-y-cortes', 'carta-completa'] },
@@ -288,7 +287,47 @@
           setActiveNavLink(path);
         }
       }
+      closeMobileMenu();
     });
+  });
+
+  // Menú desplegable mobile (hamburguesa)
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+  function openMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('flex');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    if (mobileMenuIcon) mobileMenuIcon.textContent = 'close';
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    if (mobileMenuIcon) mobileMenuIcon.textContent = 'menu';
+  }
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('flex');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+  }
+
+  // Cerrar el menú mobile si se agranda la ventana a escritorio
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      closeMobileMenu();
+    }
   });
 
   // Inicializar estado del carrito y navegación
