@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La Vaca Negra - Panel de Pedidos &amp; CRM</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#131313",
+            "background": "#131313",
+            "surface-container-lowest": "#0e0e0e",
+            "surface-container-low": "#191919",
+            "surface-container": "#202020",
+            "surface-container-high": "#282828",
+            "surface-container-highest": "#333333",
+            "primary": "#ffb4ab",
+            "primary-container": "#b91c1c",
+            "on-primary-container": "#ffcdc7",
+            "secondary": "#ffb77d",
+            "secondary-container": "#d97707",
+            "on-secondary-container": "#432100",
+            "on-surface": "#f5f3f2",
+            "on-surface-variant": "#c9b5b2",
+            "outline": "#4a3b3a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "md": "0.375rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem"
+          },
+          "fontFamily": {
+            "title-cut": ["Oswald", "sans-serif"],
+            "display": ["Playfair Display", "serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #131313; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3d3d3d; }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen flex flex-col">
+<!-- TOP HEADER / BRAND & LIVE STATUS BAR -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest border-b border-surface-container-high shadow-md px-6 py-3.5">
+<div class="max-w-[1780px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+<!-- Brand & Title -->
+<div class="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-start">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-container/20 border border-primary-container/40 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[26px]">restaurant</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-title-cut text-xl font-bold tracking-wider uppercase text-on-surface">La Vaca Negra</h1>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-title-cut text-[11px] uppercase tracking-widest font-semibold">Panel de Pedidos</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body">Corte &amp; Maduración Artesanal • Mostrador Digital</p>
+</div>
+</div>
+<!-- Store status pill -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-surface-container-high">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-title-cut text-xs text-on-surface uppercase tracking-wider">Mostrador Abierto</span>
+<span class="text-[11px] text-on-surface-variant hidden sm:inline">• Recibiendo pedidos</span>
+</div>
+</div>
+<!-- Quick Search Bar -->
+<div class="relative w-full lg:w-96">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container border border-surface-container-high text-on-surface text-sm rounded-lg pl-11 pr-4 py-2 focus:outline-none focus:border-secondary transition-colors placeholder:text-on-surface-variant/60" id="buscadorPedidos" onkeyup="filtrarPedidos()" placeholder="Buscar por cliente, #pedido, corte o teléfono..." type="text"/>
+</div>
+<!-- User & Quick Notification -->
+<div class="flex items-center gap-5 self-end lg:self-auto">
+<button class="relative p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Notificaciones">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+</button>
+<div class="flex items-center gap-3 pl-3 border-l border-surface-container-high">
+<div class="text-right">
+<p class="font-title-cut text-sm uppercase text-on-surface tracking-wide">Mostrador Central</p>
+<p class="text-[11px] text-secondary font-medium uppercase tracking-wider">Turno Asador</p>
+</div>
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm">
+            VN
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN KPI SUMMARY BAR -->
+<section class="max-w-[1780px] mx-auto w-full px-6 pt-5 pb-3">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Total Hoy -->
+<div class="bg-surface-container-low border border-surface-container-high/60 rounded-lg p-4 flex items-center justify-between">
+<div>
+<p class="font-title-cut text-xs uppercase text-on-surface-variant tracking-wider">Total Pedidos Hoy</p>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-title-cut text-3xl font-bold text-on-surface">18</span>
+<span class="text-xs text-secondary font-medium font-body">+28% vs ayer</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+</div>
+</div>
+<!-- Pendientes / Nuevos -->
+<div class="bg-surface-container-low border border-primary-container/40 rounded-lg p-4 flex items-center justify-between relative overflow-hidden">
+<div class="absolute inset-y-0 left-0 w-1.5 bg-primary-container"></div>
+<div>
+<div class="flex items-center gap-1.5">
+<p class="font-title-cut text-xs uppercase text-primary tracking-wider">Nuevos / Por Preparar</p>
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-title-cut text-3xl font-bold text-primary">3</span>
+<span class="text-xs text-on-surface-variant font-body">Prioridad alta</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-primary-container/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">notifications_active</span>
+</div>
+</div>
+<!-- Listos / Despachados -->
+<div class="bg-surface-container-low border border-surface-container-high/60 rounded-lg p-4 flex items-center justify-between">
+<div>
+<p class="font-title-cut text-xs uppercase text-on-surface-variant tracking-wider">Listos / Despachados</p>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-title-cut text-3xl font-bold text-on-surface">15</span>
+<span class="text-xs text-on-surface-variant font-body">Entregados a tiempo</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[26px]">check_circle</span>
+</div>
+</div>
+<!-- Facturación del Día -->
+<div class="bg-surface-container-low border border-surface-container-high/60 rounded-lg p-4 flex items-center justify-between">
+<div>
+<p class="font-title-cut text-xs uppercase text-secondary tracking-wider">Facturación del Día</p>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-title-cut text-3xl font-bold text-secondary">$384.200</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">payments</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN WORKSPACE: Clean Orders CRM (Left 70%) + Stock Control Compact (Right 30%) -->
+<main class="max-w-[1780px] mx-auto w-full px-6 py-4 flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- ================= ORDERS WORKSPACE (8 cols) ================= -->
+<section class="lg:col-span-8 flex flex-col gap-4">
+<!-- Controls: Filters tabs -->
+<div class="bg-surface-container-low border border-surface-container-high/80 rounded-lg p-3 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="font-title-cut text-sm uppercase tracking-wide text-on-surface-variant px-1">Mostrar:</span>
+<button class="estado-tab px-3.5 py-1.5 rounded text-xs font-title-cut uppercase tracking-wider bg-primary-container text-on-primary-container transition-colors" id="tab-todos" onclick="filtrarEstado('todos')">
+              Todos (18)
+            </button>
+<button class="estado-tab px-3.5 py-1.5 rounded text-xs font-title-cut uppercase tracking-wider bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" id="tab-nuevo" onclick="filtrarEstado('nuevo')">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              Nuevos (3)
+            </button>
+<button class="estado-tab px-3.5 py-1.5 rounded text-xs font-title-cut uppercase tracking-wider bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" id="tab-preparacion" onclick="filtrarEstado('preparacion')">
+              En Preparación (2)
+            </button>
+<button class="estado-tab px-3.5 py-1.5 rounded text-xs font-title-cut uppercase tracking-wider bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" id="tab-listo" onclick="filtrarEstado('listo')">
+              Listos / Despachados (13)
+            </button>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-xs font-title-cut uppercase tracking-wider text-secondary transition-colors" onclick="actualizarLista()">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+              Actualizar
+            </button>
+</div>
+</div>
+<!-- Orders Cards Feed -->
+<div class="flex flex-col gap-4" id="contenedorPedidos">
+<!-- CARD 1: NUEVO (Destacado) -->
+<article class="pedido-card bg-surface-container-low border-2 border-primary-container/70 rounded-xl p-5 shadow-lg flex flex-col gap-4 transition-all" data-estado="nuevo">
+<!-- Header Card: ID, Status, Type, Time -->
+<div class="flex flex-wrap items-start justify-between gap-3 pb-3 border-b border-surface-container-high/80">
+<div class="flex items-center gap-3">
+<span class="font-title-cut text-2xl font-bold text-on-surface tracking-wide">#VN-1048</span>
+<span class="bg-primary-container text-on-primary-container font-title-cut text-xs font-semibold px-2.5 py-1 rounded flex items-center gap-1.5 uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-on-surface animate-ping"></span>
+                  NUEVO • Hace 6 min
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-md bg-surface-container-high text-secondary font-title-cut text-xs uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+                  Envío a Domicilio
+                </span>
+<span class="text-xs text-on-surface-variant">Entrega estimada: 13:45 hs</span>
+</div>
+</div>
+<!-- Customer Info Row -->
+<div class="flex flex-wrap items-center justify-between gap-3 bg-surface-container/60 px-4 py-2.5 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Martín Gómez</p>
+<p class="text-xs text-on-surface-variant font-body">Av. España 780, Piso 3B • Tel: 2284-551234</p>
+</div>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-highest hover:bg-surface-container-high text-secondary text-xs font-title-cut uppercase tracking-wider transition-colors" onclick="enviarWhatsApp('2284551234', 'VN-1048')">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+                WhatsApp Directo
+              </button>
+</div>
+<!-- Instruction Box (Highlighted) -->
+<div class="p-3 bg-surface-container-lowest border-l-4 border-secondary rounded flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">restaurant</span>
+<p class="text-sm text-on-surface font-body leading-relaxed">
+<strong class="font-title-cut text-secondary uppercase tracking-wider text-xs block">Instrucción del Cliente:</strong>
+                "Por favor cortar el asado a 2 dedos y sacar el exceso de grasa del vacío. Gracias!"
+              </p>
+</div>
+<!-- Products List (Clean, spaced, readable) -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-3.5 divide-y divide-surface-container-high/40">
+<div class="flex items-center justify-between py-2 text-sm">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">2.5 kg Asado de Tira Especial</span>
+<span class="text-xs text-on-surface-variant font-body">($23.800/kg)</span>
+</div>
+<span class="font-title-cut text-base font-semibold text-on-surface">$59.500</span>
+</div>
+<div class="flex items-center justify-between py-2 text-sm">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">1.5 kg Vacío Fino de Novillo</span>
+<span class="text-xs text-on-surface-variant font-body">($21.400/kg)</span>
+</div>
+<span class="font-title-cut text-base font-semibold text-on-surface">$32.100</span>
+</div>
+<div class="flex items-center justify-between py-2 text-sm">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">6 unid. Chorizo Criollo Puro Cerdo</span>
+<span class="text-xs text-on-surface-variant font-body">($1.800 c/u)</span>
+</div>
+<span class="font-title-cut text-base font-semibold text-on-surface">$10.800</span>
+</div>
+</div>
+<!-- Footer: Totals & Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-surface-container-high">
+<div>
+<p class="text-xs text-on-surface-variant font-body">Forma de Pago: <strong class="text-on-surface">Efectivo Contraentrega</strong></p>
+<p class="text-xs text-secondary font-title-cut uppercase tracking-wider">8% OFF Aplicado (-$8.192)</p>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="text-xs line-through text-on-surface-variant font-title-cut">$102.400</span>
+<span class="font-title-cut text-2xl font-bold text-primary tracking-wide">$94.208</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-cut text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors" onclick="abrirModalTicket('VN-1048', 'Martín Gómez', '$94.208')">
+<span class="material-symbols-outlined text-[18px]">print</span>
+                  Imprimir Ticket
+                </button>
+<button class="flex-1 sm:flex-none px-5 py-2.5 rounded-lg bg-primary-container hover:bg-red-700 text-on-primary-container font-title-cut text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-colors font-semibold" onclick="marcarComoListo('VN-1048')">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  Marcar Listo
+                </button>
+</div>
+</div>
+</article>
+<!-- CARD 2: EN PREPARACIÓN -->
+<article class="pedido-card bg-surface-container-low border border-surface-container-high rounded-xl p-5 shadow flex flex-col gap-4 transition-all" data-estado="preparacion">
+<div class="flex flex-wrap items-start justify-between gap-3 pb-3 border-b border-surface-container-high/80">
+<div class="flex items-center gap-3">
+<span class="font-title-cut text-2xl font-bold text-on-surface tracking-wide">#VN-1047</span>
+<span class="bg-secondary-container/20 text-secondary border border-secondary/40 font-title-cut text-xs font-semibold px-2.5 py-1 rounded flex items-center gap-1.5 uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px]">outdoor_grill</span>
+                  EN PREPARACIÓN • Hace 22 min
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-md bg-surface-container text-on-surface font-title-cut text-xs uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+                  Retiro en Mostrador
+                </span>
+<span class="text-xs text-secondary font-medium">Retira hoy 13:30 hs</span>
+</div>
+</div>
+<!-- Customer Info -->
+<div class="flex flex-wrap items-center justify-between gap-3 bg-surface-container/60 px-4 py-2.5 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Lucía Rossi</p>
+<p class="text-xs text-on-surface-variant font-body">Cliente Frecuente • Tel: 2284-984321</p>
+</div>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-highest hover:bg-surface-container-high text-secondary text-xs font-title-cut uppercase tracking-wider transition-colors" onclick="enviarWhatsApp('2284984321', 'VN-1047')">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+                WhatsApp
+              </button>
+</div>
+<!-- Products List -->
+<div class="bg-surface-container-lowest/80 rounded-lg p-3.5 divide-y divide-surface-container-high/40">
+<div class="flex items-center justify-between py-2 text-sm">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">1x Combo Asado Amigos (5kg surtido seleccionado)</span>
+</div>
+<span class="font-title-cut text-base font-semibold text-on-surface">$54.000</span>
+</div>
+<div class="flex items-center justify-between py-2 text-sm">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">1.0 kg Mollejas de Corazón</span>
+<span class="text-xs text-on-surface-variant font-body">($28.900/kg)</span>
+</div>
+<span class="font-title-cut text-base font-semibold text-on-surface">$28.900</span>
+</div>
+</div>
+<!-- Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-surface-container-high">
+<div>
+<p class="text-xs text-on-surface-variant font-body">Pago: <strong class="text-secondary font-medium">Transferencia Verificada (MP)</strong></p>
+<span class="font-title-cut text-2xl font-bold text-on-surface tracking-wide">$82.900</span>
+</div>
+<div class="flex items-center gap-2.5 w-full sm:w-auto">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-cut text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors" onclick="abrirModalTicket('VN-1047', 'Lucía Rossi', '$82.900')">
+<span class="material-symbols-outlined text-[18px]">print</span>
+                  Ticket
+                </button>
+<button class="px-5 py-2.5 rounded-lg bg-secondary-container hover:bg-amber-600 text-white font-title-cut text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow transition-colors font-semibold" onclick="marcarComoListo('VN-1047')">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                  Marcar Listo
+                </button>
+</div>
+</div>
+</article>
+<!-- CARD 3: LISTO / DESPACHADO -->
+<article class="pedido-card bg-surface-container-low/80 border border-surface-container-high/60 rounded-xl p-5 opacity-90 hover:opacity-100 transition-all" data-estado="listo">
+<div class="flex flex-wrap items-start justify-between gap-3 pb-3 border-b border-surface-container-high/60">
+<div class="flex items-center gap-3">
+<span class="font-title-cut text-xl font-bold text-on-surface tracking-wide">#VN-1046</span>
+<span class="bg-surface-container-highest text-on-surface-variant font-title-cut text-xs font-semibold px-2.5 py-1 rounded flex items-center gap-1.5 uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px] text-green-400">check_circle</span>
+                  LISTO / DESPACHADO • Hace 40 min
+                </span>
+</div>
+<span class="px-3 py-1 rounded-md bg-surface-container text-on-surface-variant font-title-cut text-xs uppercase tracking-wider">
+                Envío Golf Club • Cadete #2
+              </span>
+</div>
+<div class="flex items-center justify-between text-sm py-1">
+<div>
+<p class="font-semibold text-on-surface">Gonzalo Echeverría</p>
+<p class="text-xs text-on-surface-variant">3.0 kg Matambre Tiernizado • 1x Sal de Parrilla Ahumada</p>
+</div>
+<div class="text-right">
+<span class="font-title-cut text-xl font-bold text-on-surface">$41.200</span>
+<span class="block text-[11px] text-green-400">Pagado Online</span>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-2 border-t border-surface-container-high/40">
+<button class="px-3 py-1.5 rounded bg-surface-container text-xs font-title-cut uppercase tracking-wider text-on-surface-variant hover:text-on-surface" onclick="abrirModalTicket('VN-1046', 'Gonzalo Echeverría', '$41.200')">
+                Reimprimir
+              </button>
+<button class="px-3 py-1.5 rounded bg-surface-container text-xs font-title-cut uppercase tracking-wider text-secondary" onclick="enviarWhatsApp('2284112233', 'VN-1046')">
+                Avisar Entrega
+              </button>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= COMPACT STOCK CONTROL (4 cols) ================= -->
+<aside class="lg:col-span-4 flex flex-col gap-4">
+<div class="bg-surface-container-low border border-surface-container-high/80 rounded-xl p-4 shadow-sm flex flex-col gap-3.5">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high/60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">inventory_2</span>
+<div>
+<h2 class="font-title-cut text-base uppercase text-on-surface tracking-wider font-bold">Control Rápido de Stock</h2>
+<p class="text-[11px] text-on-surface-variant font-body">Disponibilidad en mostrador digital</p>
+</div>
+</div>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high text-secondary" onclick="sincronizarStock()" title="Sincronizar web">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+<!-- Quick search for stock -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">search</span>
+<input class="w-full bg-surface-container border border-surface-container-high text-xs text-on-surface rounded px-8 py-1.5 focus:outline-none focus:border-secondary" id="buscarCorte" onkeyup="filtrarCortesStock()" placeholder="Filtrar corte o achura..." type="text"/>
+</div>
+<!-- Cuts items list -->
+<div class="flex flex-col gap-2 max-h-[640px] overflow-y-auto pr-1" id="listaCortes">
+<!-- Item 1: Ojo de bife -->
+<div class="corte-row bg-surface-container/70 border border-surface-container-high/50 rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="min-w-0">
+<p class="font-title-cut text-sm text-on-surface uppercase truncate">Ojo de Bife Madurado</p>
+<p class="text-[11px] text-secondary font-medium">$29.500/kg</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="font-title-cut text-base font-bold text-secondary" id="stk-ojodebife">6.8</span>
+<span class="text-[10px] text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('ojodebife', -1)">-1</button>
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('ojodebife', 1)">+1</button>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="togglePausaCorte(this, 'Ojo de Bife')" title="Pausar venta online">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Asado de Tira -->
+<div class="corte-row bg-surface-container/70 border border-surface-container-high/50 rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="min-w-0">
+<p class="font-title-cut text-sm text-on-surface uppercase truncate">Asado de Tira Especial</p>
+<p class="text-[11px] text-on-surface-variant">$23.800/kg</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="font-title-cut text-base font-bold text-on-surface" id="stk-asado">48.5</span>
+<span class="text-[10px] text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('asado', -1)">-1</button>
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('asado', 1)">+1</button>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="togglePausaCorte(this, 'Asado')">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Entraña Premium (Bajo) -->
+<div class="corte-row bg-surface-container/70 border border-primary-container/40 rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<p class="font-title-cut text-sm text-primary uppercase truncate">Entraña Fina</p>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<p class="text-[11px] text-primary/80">$28.400/kg • Stock Bajo</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="font-title-cut text-base font-bold text-primary" id="stk-entrana">4.2</span>
+<span class="text-[10px] text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('entrana', -0.5)">-.5</button>
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('entrana', 0.5)">+.5</button>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="togglePausaCorte(this, 'Entraña')">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+</button>
+</div>
+</div>
+<!-- Item 4: Vacío -->
+<div class="corte-row bg-surface-container/70 border border-surface-container-high/50 rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="min-w-0">
+<p class="font-title-cut text-sm text-on-surface uppercase truncate">Vacío Fino de Novillo</p>
+<p class="text-[11px] text-on-surface-variant">$21.400/kg</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="font-title-cut text-base font-bold text-on-surface" id="stk-vacio">32.0</span>
+<span class="text-[10px] text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('vacio', -1)">-1</button>
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('vacio', 1)">+1</button>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="togglePausaCorte(this, 'Vacío')">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+</button>
+</div>
+</div>
+<!-- Item 5: Matambre -->
+<div class="corte-row bg-surface-container/70 border border-surface-container-high/50 rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="min-w-0">
+<p class="font-title-cut text-sm text-on-surface uppercase truncate">Matambre Tiernizado</p>
+<p class="text-[11px] text-on-surface-variant">$19.800/kg</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="font-title-cut text-base font-bold text-on-surface" id="stk-matambre">8.5</span>
+<span class="text-[10px] text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('matambre', -1)">-1</button>
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('matambre', 1)">+1</button>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="togglePausaCorte(this, 'Matambre')">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+</button>
+</div>
+</div>
+<!-- Item 6: Chorizo -->
+<div class="corte-row bg-surface-container/70 border border-surface-container-high/50 rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="min-w-0">
+<p class="font-title-cut text-sm text-on-surface uppercase truncate">Chorizo Criollo Cerdo</p>
+<p class="text-[11px] text-on-surface-variant">$1.800 c/u</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="font-title-cut text-base font-bold text-on-surface" id="stk-chorizo">120</span>
+<span class="text-[10px] text-on-surface-variant">u.</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('chorizo', -6)">-6</button>
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('chorizo', 6)">+6</button>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="togglePausaCorte(this, 'Chorizo')">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+</button>
+</div>
+</div>
+<!-- Item 7: Morcilla -->
+<div class="corte-row bg-surface-container/70 border border-surface-container-high/50 rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="min-w-0">
+<p class="font-title-cut text-sm text-on-surface uppercase truncate">Morcilla Bombón</p>
+<p class="text-[11px] text-on-surface-variant">$1.600 c/u</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="font-title-cut text-base font-bold text-on-surface" id="stk-morcilla">85</span>
+<span class="text-[10px] text-on-surface-variant">u.</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('morcilla', -6)">-6</button>
+<button class="w-6 h-6 rounded bg-surface-container-highest hover:bg-surface-container-high text-xs text-on-surface font-bold flex items-center justify-center" onclick="cambiarStock('morcilla', 6)">+6</button>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary" onclick="togglePausaCorte(this, 'Morcilla')">
+<span class="material-symbols-outlined text-[16px]">toggle_on</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Fast Add Quick Cut -->
+<div class="pt-2 border-t border-surface-container-high/60 flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-body">Cámara de Maduración: 1.8°C</span>
+<button class="text-xs font-title-cut text-secondary hover:underline uppercase flex items-center gap-1" onclick="agregarCorteRapido()">
+<span class="material-symbols-outlined text-[16px]">add</span>
+              Ajustar Stock General
+            </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- MODAL: TICKET DE MOSTRADOR / COBRO -->
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4" id="modalTicket">
+<div class="bg-surface-container-low border border-surface-container-high rounded-xl max-w-md w-full p-6 flex flex-col gap-4 shadow-2xl relative">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">receipt</span>
+<h3 class="font-title-cut text-lg uppercase text-on-surface tracking-wider font-bold">Ticket de Mostrador</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="cerrarModalTicket()">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Thermal Mockup -->
+<div class="bg-surface-container-lowest border border-surface-container-highest/60 rounded-lg p-4 font-mono text-xs text-on-surface flex flex-col gap-2">
+<div class="text-center pb-2 border-b border-surface-container-highest/80">
+<p class="font-bold text-sm uppercase tracking-wider">LA VACA NEGRA</p>
+<p class="text-[11px] text-on-surface-variant">Carnicería &amp; Maduración Artesanal</p>
+<p class="text-[10px] text-on-surface-variant">CUIT 30-71829910-4 • Tandil, Bs As</p>
+</div>
+<div class="flex justify-between text-on-surface-variant pt-1">
+<span>Orden: <strong class="text-on-surface" id="ticketId">#VN-1048</strong></span>
+<span>Fecha: Hoy</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Cliente: <strong class="text-on-surface" id="ticketCliente">Martín Gómez</strong></span>
+<span>Estado: Listo</span>
+</div>
+<div class="border-t border-b border-dashed border-surface-container-highest py-2 my-1 flex flex-col gap-1">
+<div class="flex justify-between"><span>2.500 kg Asado Tira Especial</span><span>$59.500</span></div>
+<div class="flex justify-between"><span>1.500 kg Vacío Fino Novillo</span><span>$32.100</span></div>
+<div class="flex justify-between"><span>6x Chorizo Criollo Cerdo</span><span>$10.800</span></div>
+</div>
+<div class="flex justify-between text-sm font-bold pt-1">
+<span>TOTAL A COBRAR:</span>
+<span class="text-secondary" id="ticketTotal">$94.208</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-title-cut text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors" onclick="imprimirComprobante()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+          Imprimir Térmica
+        </button>
+<button class="px-4 py-2.5 rounded-lg bg-primary-container hover:bg-red-700 text-on-primary-container font-title-cut text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors font-semibold" onclick="cerrarModalTicket(); mostrarToast('Ticket Guardado', 'El pedido se confirmó exitosamente.');">
+<span class="material-symbols-outlined text-[18px]">done</span>
+          Aceptar
+        </button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 bg-surface-container-highest text-on-surface px-4 py-3 rounded-lg shadow-2xl border-l-4 border-secondary flex items-center gap-3 transition-all transform translate-y-24 opacity-0 pointer-events-none" id="toast">
+<span class="material-symbols-outlined text-secondary" id="toastIcon">check_circle</span>
+<div>
+<p class="font-title-cut text-sm uppercase text-on-surface" id="toastTitulo">Operación Exitosa</p>
+<p class="text-xs text-on-surface-variant font-body" id="toastDesc">Se actualizó el estado del pedido.</p>
+</div>
+</div>
+<!-- SCRIPT LOGIC -->
+<script>
+    function marcarComoListo(id) {
+      mostrarToast(`Pedido #${id} Listo`, 'Se notificó al cliente para entrega o retiro.');
+      const card = Array.from(document.querySelectorAll('.pedido-card')).find(c => c.innerHTML.includes(id));
+      if (card) {
+        card.setAttribute('data-estado', 'listo');
+        card.classList.add('opacity-90');
+      }
+    }
+
+    function enviarWhatsApp(telefono, id) {
+      const msj = encodeURIComponent(`Hola! Te escribimos desde Carnicería La Vaca Negra sobre tu pedido #${id}. Ya se encuentra listo para entrega/retiro. ¡Muchas gracias!`);
+      window.open(`https://wa.me/54${telefono}?text=${msj}`, '_blank');
+    }
+
+    function abrirModalTicket(id, cliente, total) {
+      document.getElementById('ticketId').innerText = '#' + id;
+      document.getElementById('ticketCliente').innerText = cliente;
+      document.getElementById('ticketTotal').innerText = total;
+      const modal = document.getElementById('modalTicket');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function cerrarModalTicket() {
+      const modal = document.getElementById('modalTicket');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function imprimirComprobante() {
+      cerrarModalTicket();
+      mostrarToast('Imprimiendo Ticket', 'Enviado a la comandera térmica del mostrador.');
+    }
+
+    function cambiarStock(corteId, cant) {
+      const el = document.getElementById('stk-' + corteId);
+      if (!el) return;
+      let actual = parseFloat(el.innerText);
+      actual = Math.max(0, Math.round((actual + cant) * 10) / 10);
+      el.innerText = actual.toFixed(corteId === 'chorizo' || corteId === 'morcilla' ? 0 : 1);
+      mostrarToast('Stock Actualizado', `${corteId.toUpperCase()}: ${el.innerText} disponibles.`);
+    }
+
+    function togglePausaCorte(btn, corteNombre) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon.innerText === 'toggle_on') {
+        icon.innerText = 'toggle_off';
+        btn.classList.add('text-primary');
+        mostrarToast(`${corteNombre} Pausado`, 'Temporalmente marcado como agotado en la web.');
+      } else {
+        icon.innerText = 'toggle_on';
+        btn.classList.remove('text-primary');
+        mostrarToast(`${corteNombre} Activo`, 'Nuevamente visible en la tienda.');
+      }
+    }
+
+    function sincronizarStock() {
+      mostrarToast('Stock Sincronizado', 'Se sincronizó el inventario con el catálogo online.');
+    }
+
+    function agregarCorteRapido() {
+      const corte = prompt('Ingrese el nombre del corte o producto:');
+      if (corte) {
+        const kg = prompt('Kilos o unidades disponibles:', '10');
+        mostrarToast('Corte Añadido', `${corte}: ${kg} ingresados al stock.`);
+      }
+    }
+
+    function filtrarEstado(estado) {
+      // Toggle tab classes
+      document.querySelectorAll('.estado-tab').forEach(tab => {
+        tab.classList.remove('bg-primary-container', 'text-on-primary-container');
+        tab.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      const activeTab = document.getElementById('tab-' + estado);
+      if (activeTab) {
+        activeTab.classList.add('bg-primary-container', 'text-on-primary-container');
+        activeTab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      }
+
+      // Filter cards
+      document.querySelectorAll('.pedido-card').forEach(card => {
+        if (estado === 'todos') {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = card.getAttribute('data-estado') === estado ? 'flex' : 'none';
+        }
+      });
+    }
+
+    function filtrarPedidos() {
+      const query = document.getElementById('buscadorPedidos').value.toLowerCase();
+      document.querySelectorAll('.pedido-card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    }
+
+    function filtrarCortesStock() {
+      const query = document.getElementById('buscarCorte').value.toLowerCase();
+      document.querySelectorAll('.corte-row').forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    }
+
+    function actualizarLista() {
+      mostrarToast('Actualizado', 'Lista de pedidos sincronizada en tiempo real.');
+    }
+
+    function mostrarToast(titulo, desc) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastTitulo').innerText = titulo;
+      document.getElementById('toastDesc').innerText = desc;
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+  </script>
+</body></html>
